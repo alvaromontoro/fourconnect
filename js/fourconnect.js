@@ -175,12 +175,12 @@ class FourConnect extends HTMLElement {
 
 		// shuffle buttons
 		for (let x = 0; x < 100; x++) {
-			// const c1 = Math.floor(Math.random() * buttons.length);
-			// const c2 = Math.floor(Math.random() * buttons.length);
+			const c1 = Math.floor(Math.random() * buttons.length);
+			const c2 = Math.floor(Math.random() * buttons.length);
 
-			// const aux = buttons[c1];
-			// buttons[c1] = buttons[c2];
-			// buttons[c2] = aux;
+			const aux = buttons[c1];
+			buttons[c1] = buttons[c2];
+			buttons[c2] = aux;
 		}
 
 		for (let x = 0; x < buttons.length; x++) {
