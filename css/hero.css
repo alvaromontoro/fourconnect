@@ -88,6 +88,9 @@ hgroup h2 {
   .hero {
     display: grid;
     grid-template-columns: 1fr 600px 150px;
+    grid-template-columns: 1fr 600px;
+    padding-inline: 75px;
+    padding-inline: calc(75px + 1em);
     align-items: start;
     gap: 2em;
     margin-block-start: 1em;
@@ -110,7 +113,7 @@ hgroup h2 {
     font-size: 1.125em;
   }
 
-  .ac-container::before {
+  /* .ac-container::before {
     content: "Sponsor";
   }
 
@@ -118,7 +121,7 @@ hgroup h2 {
     width: 150px;
     height: 550px;
     background: var(--accent-text);
-  }
+  } */
 
   .hero .instructions p {
     display: block;

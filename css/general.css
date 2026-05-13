@@ -1,4 +1,5 @@
 :root {
+  color-scheme: light dark;
   --primary: #a34;
   --primary-light: #b45;
   --primary: #5c467b;
@@ -14,7 +15,6 @@
   --header-size: 120px;
   --popup-background: #fff;
   --popup-text: #222;
-  color-scheme: light dark;
 }
 
 @supports (color: light-dark(red, red)) {
@@ -102,7 +102,7 @@ h1, h2, h3 {
   margin: 0;
 }
 
-.ac-container {
+/* .ac-container {
   position: relative;
   margin-block-end: 2em;
 }
@@ -123,4 +123,4 @@ h1, h2, h3 {
   padding: 0.5em;
   display: grid;
   place-items: center;
-}
+} */

@@ -1,0 +1,141 @@
+:root {
+  --footer: #1d264b;
+  --footer: var(--accent-text);
+  --footer-text: #eee;
+  --footer-link: #fff;
+  --footer-border: var(--accent-text);
+}
+
+@supports (color: light-dark(red, red)) {
+  :root {
+    --footer: light-dark(#1d264b, var(--accent-text));
+    --footer-link: light-dark(var(--accent-text), var(--accent));
+    --footer-border: light-dark(var(--accent-text), var(--accent));
+  }
+}
+
+footer {
+  /* --container-max-width: 1400px; */
+  background: var(--footer);
+  color: var(--footer-text);
+  margin-block-start: 3em;
+  padding-block: 1em 3em;
+}
+
+footer h2 {
+  align-items: center;
+  display: flex;
+  font-family: Poppins, Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 500;
+  gap: 0.25em;
+  margin: 0;
+  font-size: 1.25em;
+}
+
+footer h2 img {
+  border: 0.075em solid #fff;
+  border-radius: 20%;
+}
+
+.footer-content {
+
+}
+
+.footer-links {
+   margin-block: 2em;
+}
+
+footer details {
+  width: 100%;
+  margin-block-end: 1em;
+  padding-block-end: 1em;
+  border-block-end: 1px solid var(--footer-border);
+}
+
+footer summary {
+  position: relative;
+}
+
+footer summary::after {
+  content: "";
+  width: 1em;
+  height: 1em;
+  inset-inline-end: 0;
+  position: absolute;
+  mask-image: url(../media/chevron-right.svg);
+  mask-size: contain;
+  background: var(--footer-text);
+  top: 50%;
+  translate: 0 -50%;
+}
+
+footer details[open] summary::after {
+  rotate: 90deg;
+}
+
+footer summary::marker {
+  content: none;
+}
+
+footer details:last-child {
+  margin-block-end: 0;
+  padding-block-end: 0;
+  border: none;
+}
+
+footer h3 {
+  display: inline-block;
+}
+
+footer ul {
+  margin: 0;
+  padding: 0;
+  list-style: "";
+}
+
+footer ul li {
+  margin-block: 1em;
+}
+
+footer a {
+  color: var(--footer-link) !important;
+}
+
+@media (min-width: 768px) {
+  footer h2 {
+    font-size: 1.5em;
+  }
+}
+
+@media (min-width: 1300px) {
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 3em;
+    flex-wrap: wrap;
+    margin: 0;
+    flex: 1;
+    justify-content: end;
+  }
+
+  .footer-links details {
+    width: auto;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  .footer-links summary::after {
+    content: none;
+  }
+
+  .footer-links ::details-content {
+    display: block;
+    content-visibility: visible;
+  }
+}
