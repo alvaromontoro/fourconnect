@@ -1,0 +1,128 @@
+.hero {
+
+}
+
+.hero .heading {
+  text-align: center;
+}
+
+hgroup {
+  margin: auto auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5em;
+  margin-block: 1em 2em;
+}
+
+hgroup p {
+  color: var(--accent);
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.9em;
+  letter-spacing: -0.2px;
+  margin-block: 0;
+  line-height: 1;
+}
+
+hgroup h2 {
+  text-transform: capitalize;
+  font-size: 2.5em;
+  font-weight: bold;
+  letter-spacing: -0.025em;
+  font-family: Poppins, Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+  margin-block: 0;
+  line-height: 1;
+}
+
+.hero .instructions {
+  margin-block-start: 2em;
+}
+
+.hero .instructions p {
+  text-align: center;
+  line-height: 1.5;
+  margin: auto auto;
+}
+
+.hero .game {
+  margin-block-end: 2em;
+}
+
+@media (min-width: 768px) {
+  .hero .heading {
+    text-align: start;
+    display: grid;
+    grid-template-columns: auto 1fr;
+  }
+
+  hgroup {
+    align-items: start;
+    margin-block-end: 0em;
+  }
+
+  time.pill {
+    color: var(--accent);
+    background: transparent;
+    font-size: 1.25em;
+    border-top: 2px solid var(--accent);
+    border-radius: 0;
+    padding: 0.5em 0 0 1em;
+    margin: 0;
+    align-self: end;
+  }
+
+  .hero .instructions {
+    grid-column: 1 / -1;
+    margin-block-start: 1.5em;
+  }
+
+  .hero .instructions p {
+    display: inline-block;
+  }
+}
+
+
+@media (min-width: 1300px) {
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 600px 150px;
+    align-items: start;
+    gap: 2em;
+    margin-block-start: 1em;
+  }
+
+  .hero .heading {
+    grid-template-columns: 1fr;
+    margin-block-start: 4em;
+  }
+
+  .hero hgroup {
+    align-items: start;
+    margin-inline: 0;
+  }
+
+  .hero time {
+    border: none;
+    padding: 0;
+    margin-block-start: 1em;
+    font-size: 1.125em;
+  }
+
+  .ac-container::before {
+    content: "Sponsor";
+  }
+
+  .ac-container > div {
+    width: 150px;
+    height: 550px;
+    background: var(--accent-text);
+  }
+
+  .hero .instructions p {
+    display: block;
+    text-align: start;
+    margin-block-end: 1em;
+  }
+}

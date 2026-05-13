@@ -1,0 +1,126 @@
+:root {
+  --primary: #a34;
+  --primary-light: #b45;
+  --primary: #5c467b;
+  --primary-light: #7b5fa0;
+  --accent: #F3E4FF;
+  --accent-text: #7d44db;
+  --text: #fff;
+  --link: #ddd;
+  --link-active: #fff;
+  --container-max-width: 700px;
+  --header-color: #fff;
+  --header-text: #222;
+  --header-size: 120px;
+  --popup-background: #fff;
+  --popup-text: #222;
+  color-scheme: light dark;
+}
+
+@supports (color: light-dark(red, red)) {
+  :root {
+    --primary: light-dark(#f5f0fd, #5c467b);
+    --primary-light: light-dark(#ffffff, #7b5fa0);
+    --accent: light-dark(#7d44db, #DDB3FF);
+    --accent-text: light-dark(#F3E4FF, #5c467b);
+    --text: light-dark(#222, #fff);
+    --link: light-dark(#444, #ddd);
+    --link-active: light-dark(#000, #fff);
+    --header-color: light-dark(#fff, #5c467b);
+    --header-text: light-dark(#222, #f4f4f4);
+    --popup-background: light-dark(#fff, #f5f0fd);
+    --popup-text: light-dark(#333, #222);
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 0.25em;
+}
+
+.a11y-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  mask: url();
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.container {
+  box-sizing: border-box;
+  margin: auto auto;
+  max-width: var(--container-max-width);
+  padding: 1em;
+  width: 100%;
+}
+
+.pill {
+  color: var(--accent-text);
+  background: var(--accent);
+  font-size: 0.9em;
+  font-weight: 500;
+  letter-spacing: -0.2px;
+  margin-block: 0;
+  margin-inline: auto;
+  padding: 0.5em 1.25em;
+  border-radius: 5em;
+}
+
+html {
+  background-color: var(--primary);
+  background-image: linear-gradient(var(--primary) var(--header-size), var(--primary-light));
+  color: var(--text);
+  font-family: Inter, Poppins, -apple-system, BlinkMacSystemFont, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+}
+
+body {
+  margin: 0;
+}
+
+a, a:link, a:visited {
+  color: var(--link);
+  transition: color 0.2s;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  color: var(--link-active);
+}
+
+h1, h2, h3 {
+  font-family: Poppins, Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 500;
+  margin: 0;
+}
+
+.ac-container {
+  position: relative;
+  margin-block-end: 2em;
+}
+
+.ac-container::before {
+  content: "Sponsored Content";
+  font-size: 0.75em;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: -0.2px;
+  color: var(--accent);
+  background: var(--accent-text);
+  padding: 0.25em 0.5em;
+}
+
+.ac-container > div {
+  background: var(--accent-text);
+  padding: 0.5em;
+  display: grid;
+  place-items: center;
+}

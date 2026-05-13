@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>4Connect</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="./js/code.js" defer></script>
+    <script src="./js/fourconnect.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>
+          <img aria-hidden alt="" src="./media/logo.webp" width="32" height="32">
+          4Connect
+        </h1>
+        <nav aria-label="Main navigation">
+          <button id="menu-toggle" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle menu" hidden>
+            <span class="a11y-hidden">Toggle menu</span>
+          </button>
+          <ul id="main-menu">
+            <li><a href="./index.html" aria-current="page" data-url="home">Home</a></li>
+            <li><a href="./how-to-play.html" data-url="how-to-play">How to Play</a></li>
+            <li><a href="./archive.html" data-url="archive">Archive</a></li>
+            <li><a href="./about.html" data-url="about">About</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero container">
+      <div class="heading">
+        <hgroup>
+          <p>Today's game</p>
+          <h2>Daily Puzzle</h2>
+        </hgroup>
+        <time datetime="2026-05-12" class="game-date pill">May 12, 2026</time>
+        <div class="instructions">
+          <p>16 words.</p>
+          <p>4 categories.</p>
+          <p>Find the connection.</p>
+        </div>
+      </div>
+
+      <div class="game">
+        <four-connect data='[
+          {"name":"Reds", "values":["Crimson","Salmon","Fire<wbr>Brick","Light<wbr>Coral"]},
+          {"name":"Yellows", "values":["Moccasin","Peach<wbr>Puff","Lemon<wbr>Chiffon","Gold"]},
+          {"name":"Blues", "values": ["Cadet<wbr>Blue","Cyan","Turquoise","Navy"]},
+          {"name":"Purples", "values": ["Lavender","Thistle","Plum","Orchid"]}
+        ]'></four-connect>
+      </div>
+
+      <div class="ac-container">
+        <div>
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4312629628022354" crossorigin="anonymous"></script>
+          <!-- 4Connect-1 -->
+          <ins class="adsbygoogle"
+              style="display:block"
+              data-ad-client="ca-pub-4312629628022354"
+              data-ad-slot="1114095098"
+              data-ad-format="auto"
+              data-full-width-responsive="true"></ins>
+          <script>
+              (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
+        </div>
+      </div>
+    </section>
+
+    <section class="previous container">
+      <h2>Play Previous Games</h2>
+      
+    </section>
+    
+  </body>
+</html>

@@ -1,0 +1,176 @@
+:root {
+  --header-color: #fff;
+  --header-text: #222;
+  --header-size: 120px;
+  --popup-background: #fff;
+  --popup-text: #222;
+}
+
+@supports (color: light-dark(red, red)) {
+  :root {
+    --header-color: light-dark(#fff, #5c467b);
+    --header-text: light-dark(#222, #f4f4f4);
+    --popup-background: light-dark(#fff, #f5f0fd);
+    --popup-text: light-dark(#333, #222);
+  }
+}
+
+header {
+  background: var(--header-color);
+  color: var(--header-text);
+}
+
+header > div {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+
+header a {
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+header a::before {
+  background: currentColor;
+  mask-position: 0 50%;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  content: "";
+  display: inline-block;
+  margin-inline-end: 0.5em;
+  height: 1.5em;
+  width: 1.5em;
+}
+
+/* Icons for header links from linearicons.com https://linearicons.com/free */
+header a[data-url="home"]::before { mask-image: url("../media/home.svg"); }
+header a[data-url="how-to-play"]::before { mask-image: url("../media/question-circle.svg"); }
+header a[data-url="archive"]::before { mask-image: url("../media/history.svg"); }
+header a[data-url="about"]::before { mask-image: url("../media/user.svg"); }
+
+
+h1 {
+  align-items: center;
+  display: flex;
+  font-family: Poppins, Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 500;
+  gap: 0.25em;
+  margin: 0;
+  font-size: 1.5em;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 2em;
+  }
+}
+
+h1 img {
+  border: 0.075em solid #fff;
+  border-radius: 20%;
+}
+
+#menu-toggle {
+  mask: url(../media/menu.svg) center center no-repeat;
+  mask-size: contain;
+  background: currentColor;
+  border: none;
+  color: var(--header-text);
+  width: 2em;
+  height: 2em;
+  padding: 0.25em;
+}
+
+#menu-toggle[aria-expanded="true"] {
+  mask-image: url(../media/cross.svg);
+}
+
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  align-items: center;
+}
+
+.loaded #menu-toggle {
+  display: block;
+}
+
+.loaded header nav {
+  position: relative;
+}
+
+.loaded header nav ul {
+  position: absolute;
+  top: 100%;
+  top: calc(100% + 0.25em);
+  right: 0;
+  background: var(--popup-background);
+  padding: 0.5em;
+  box-shadow: 0 0.125em 0.5em #0002;
+  border-radius: 0.5em;
+  display: none;
+  z-index: 1;
+}
+
+.loaded header nav ul.active {
+  display: flex;
+}
+
+.loaded header nav ul li {
+  flex: 1;
+}
+
+.loaded header nav ul li:hover {
+  background: #0001;
+}
+
+.loaded header nav ul li a {
+  color: var(--popup-text);
+  padding: 0.7em 2em;
+  padding-inline-start: 1em;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --container-max-width: 700px;  
+  }  
+}
+
+@media (min-width: 1300px) {
+  :root {
+      --container-max-width: 1200px;
+  }
+
+  .loaded #menu-toggle {
+    display: none;
+  }
+
+  .loaded header nav ul {
+    position: static;
+    display: flex;
+    margin: 0;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .loaded header nav ul li:hover {
+    background: transparent;
+  }
+
+  .loaded header nav ul li a {
+    padding: 0.5em 1em;
+    color: var(--header-text);
+  }
+}
