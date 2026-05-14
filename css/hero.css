@@ -1,39 +1,34 @@
-.hero {
-
-}
-
 .hero .heading {
   text-align: center;
 }
 
 hgroup {
-  margin: auto auto;
-  display: flex;
   align-items: center;
-  justify-content: center;
+  display: flex;
   flex-direction: column;
   gap: 0.5em;
+  justify-content: center;
+  margin: auto auto;
   margin-block: 1em 2em;
 }
 
 hgroup p {
   color: var(--accent);
-  text-transform: uppercase;
-  font-weight: bold;
   font-size: 0.9em;
+  font-weight: bold;
   letter-spacing: -0.2px;
-  margin-block: 0;
   line-height: 1;
+  margin-block: 0;
+  text-transform: uppercase;
 }
 
 hgroup h2 {
-  text-transform: capitalize;
   font-size: 2.5em;
   font-weight: bold;
   letter-spacing: -0.025em;
-  font-family: Poppins, Inter, -apple-system, BlinkMacSystemFont, sans-serif;
-  margin-block: 0;
   line-height: 1;
+  margin-block: 0;
+  text-transform: capitalize;
 }
 
 .hero .instructions {
@@ -41,16 +36,16 @@ hgroup h2 {
 }
 
 .hero .instructions p {
-  text-align: center;
   line-height: 1.5;
   margin: auto auto;
+  text-align: center;
 }
 
 @media (min-width: 768px) {
   .hero .heading {
-    text-align: start;
     display: grid;
     grid-template-columns: auto 1fr;
+    text-align: start;
   }
 
   hgroup {
@@ -59,14 +54,14 @@ hgroup h2 {
   }
 
   time.pill {
-    color: var(--accent);
-    background: transparent;
-    font-size: 1.25em;
-    border-top: 2px solid var(--accent);
-    border-radius: 0;
-    padding: 0.5em 0 0 1em;
-    margin: 0;
     align-self: end;
+    background: transparent;
+    border-radius: 0;
+    border-top: 2px solid var(--accent);
+    color: var(--accent);
+    font-size: 1.25em;
+    margin: 0;
+    padding: 0.5em 0 0 1em;
   }
 
   .hero .instructions {
@@ -82,14 +77,14 @@ hgroup h2 {
 
 @media (min-width: 1300px) {
   .hero {
+    align-items: start;
     display: grid;
+    gap: 2em;
     grid-template-columns: 1fr 600px 150px;
     grid-template-columns: 1fr 600px;
+    margin-block-start: 1em;
     padding-inline: 75px;
     padding-inline: calc(75px + 1em);
-    align-items: start;
-    gap: 2em;
-    margin-block-start: 1em;
   }
 
   .hero .heading {
@@ -104,9 +99,9 @@ hgroup h2 {
 
   .hero time {
     border: none;
-    padding: 0;
-    margin-block-start: 1em;
     font-size: 1.125em;
+    margin-block-start: 1em;
+    padding: 0;
   }
 
   /* .ac-container::before {
@@ -121,7 +116,7 @@ hgroup h2 {
 
   .hero .instructions p {
     display: block;
-    text-align: start;
     margin-block-end: 1em;
+    text-align: start;
   }
 }

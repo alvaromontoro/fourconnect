@@ -257,6 +257,11 @@ class FourConnect extends HTMLElement {
   }
 }
 
+:focus-visible {
+	outline: 2px solid var(--accent, currentColor);
+	outline-offset: 2px;
+}
+
 h2 {
   font-weight: 400;
 }
@@ -305,10 +310,14 @@ h2 {
     color: var(--button-text);
     font-weight: 400;
     order: 1;
-    transition: background-color 0.25s, color 0.25s, order 0.25s;
+    transition: background-color 0.25s, color 0.25s, opacity 0.25s, order 0.25s;
     view-transition-name: match-element;
     word-break: break-word;
     font-family: Inter, Poppins, -apple-system, BlinkMacSystemFont, sans-serif;
+
+		&:hover {
+			background: oklch(from var(--button) calc(l * 1.1) c h / 1);
+		}
 
     &[data-selected] {
       background: var(--accent);

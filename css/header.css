@@ -31,21 +31,21 @@ header > div {
 }
 
 header a {
-  display: flex;
   align-items: center;
+  display: flex;
   font-weight: 400;
   white-space: nowrap;
 }
 
 header a::before {
   background: currentColor;
+  content: "";
+  display: inline-block;
+  height: 1.5em;
+  margin-inline-end: 0.5em;
   mask-position: 0 50%;
   mask-repeat: no-repeat;
   mask-size: contain;
-  content: "";
-  display: inline-block;
-  margin-inline-end: 0.5em;
-  height: 1.5em;
   width: 1.5em;
 }
 
@@ -60,10 +60,10 @@ h1 {
   align-items: center;
   display: flex;
   font-family: Poppins, Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1.5em;
   font-weight: 500;
   gap: 0.25em;
   margin: 0;
-  font-size: 1.5em;
 }
 
 @media (min-width: 768px) {
@@ -78,14 +78,14 @@ h1 img {
 }
 
 #menu-toggle {
-  mask: url(../media/menu.svg) center center no-repeat;
-  mask-size: contain;
   background: currentColor;
   border: none;
   color: var(--header-text);
-  width: 2em;
   height: 2em;
+  mask: url(../media/menu.svg) center center no-repeat;
+  mask-size: contain;
   padding: 0.25em;
+  width: 2em;
 }
 
 #menu-toggle[aria-expanded="true"] {
@@ -93,13 +93,13 @@ h1 img {
 }
 
 header nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  align-items: center;
   display: flex;
   flex-wrap: wrap;
   gap: 1em;
-  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .loaded #menu-toggle {
@@ -111,15 +111,15 @@ header nav ul {
 }
 
 .loaded header nav ul {
+  background: var(--popup-background);
+  border-radius: 0.5em;
+  box-shadow: 0 0.125em 0.5em #0002;
+  display: none;
+  padding: 0.5em;
   position: absolute;
+  right: 0;
   top: 100%;
   top: calc(100% + 0.25em);
-  right: 0;
-  background: var(--popup-background);
-  padding: 0.5em;
-  box-shadow: 0 0.125em 0.5em #0002;
-  border-radius: 0.5em;
-  display: none;
   z-index: 1;
 }
 
@@ -157,12 +157,12 @@ header nav ul {
   }
 
   .loaded header nav ul {
-    position: static;
-    display: flex;
-    margin: 0;
     background: transparent;
     box-shadow: none;
+    display: flex;
+    margin: 0;
     padding: 0;
+    position: static;
   }
 
   .loaded header nav ul li:hover {
@@ -170,7 +170,7 @@ header nav ul {
   }
 
   .loaded header nav ul li a {
-    padding: 0.5em 1em;
     color: var(--header-text);
+    padding: 0.5em 1em;
   }
 }
