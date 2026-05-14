@@ -1,0 +1,135 @@
+.more-games {
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+}
+
+.more-games > section {
+  flex: 1;
+}
+
+.more-games h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.25em;
+  margin-block-end: 0.75em;
+}
+
+.more-games h2::before {
+  content: "";
+  width: 1em;
+  height: 1em;
+  background: currentcolor;
+  display: inline-block;
+}
+
+#previous-games::before {
+  mask: url("../media/calendar-full.svg") no-repeat center;
+}
+
+#by-category-games::before {
+  mask: url("../media/list.svg") no-repeat center;
+}
+
+.more-games ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1em;
+  font-size: 3vmin;
+}
+
+.more-games ul li {
+  aspect-ratio: 1;
+  border: 2px solid;
+  border-radius: 0.5em;
+  flex: 1;
+  
+}
+
+.more-games ul li:hover {
+  border-color: var(--accent);
+  background: var(--accent-text);
+}
+
+.more-games ul li a {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  box-sizing: border-box;
+  flex: 1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+}
+
+.more-games ul li a:hover {
+  color: var(--accent);
+}
+
+.more-games ul li a::before {
+  content: "";
+  width: 2em;
+  height: 2em;
+  background: currentcolor;
+  display: inline-block;
+  mask: url("../media/calendar-full.svg") no-repeat center;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+
+.more-games .previous ul li a::before {
+  mask-image: url("../media/calendar-full.svg");
+}
+
+.more-games ul li a.tech::before { mask-image: url("../media/laptop.svg"); }
+.more-games ul li a.music::before { mask-image: url("../media/music-note.svg"); }
+.more-games ul li a.food::before { mask-image: url("../media/dinner.svg"); }
+.more-games ul li a.sports::before { mask-image: url("../media/bicycle.svg"); }
+.more-games ul li a.world::before { mask-image: url("../media/earth.svg"); }
+.more-games ul li a.art::before { mask-image: url("../media/picture.svg"); }
+
+.more-games ul li:last-child a::before {
+  mask-image: url("../media/plus-circle.svg");
+}
+
+.more-games ul li:nth-child(n + 5) {
+  display: none;
+}
+
+.more-games ul li:last-child {
+  display: list-item;
+}
+
+@media (min-width: 768px) {
+  .more-games ul li:nth-child(n + 5) {
+    display: list-item;
+  }
+
+  .more-games ul {
+    font-size: 0.9em;
+  }
+}
+
+@media (min-width: 1300px) {
+  .more-games {
+    flex-direction: row;
+  }
+
+  .more-games ul li:nth-child(n + 5) {
+    display: none;
+  }
+  .more-games ul li:last-child {
+    display: list-item;
+  }
+
+  .more-games ul {
+    font-size: 0.9em;
+  }
+}

@@ -46,10 +46,6 @@ hgroup h2 {
   margin: auto auto;
 }
 
-.hero .game {
-  margin-block-end: 2em;
-}
-
 @media (min-width: 768px) {
   .hero .heading {
     text-align: start;

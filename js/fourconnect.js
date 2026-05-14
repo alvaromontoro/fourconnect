@@ -226,8 +226,11 @@ class FourConnect extends HTMLElement {
   --gap: 1em;
   --font: 1.5cqi;
   --button: var(--accent-text);
+  --button-border: var(--button);
+  --button-border-semi: rgb(from var(--button-border) r g b / 0.5);
   --button-text: var(--accent);
   --x-color: currentColor;
+  --error-message: currentcolor;
   container-type: inline-size;
   width: 100%;
   margin: auto;
@@ -247,6 +250,10 @@ class FourConnect extends HTMLElement {
 @supports (color: light-dark(#fff, #000)) {
   .connect-4 {
     --x-color: light-dark(#d44, currentColor);
+    --button: light-dark(var(--accent-text), oklch(from var(--accent-text) calc(l * 0.8) c h / 1));
+    --error-message: light-dark(#d44, #FFAFAF);
+    --button-border: light-dark(var(--button-text), var(--button));
+    --button-border-semi: rgb(from var(--button-border) r g b / 0.5);
   }
 }
 
@@ -292,7 +299,7 @@ h2 {
     position: relative;
     width: 100%;
     height: 100%;
-    border: 0;
+    border: 1px solid var(--button-border-semi);
     border-radius: 0.25em;
     background: var(--button);
     color: var(--button-text);
@@ -344,6 +351,7 @@ h2 {
 
 .already-guessed {
   font-size: 1rem;
+  color: var(--error-message);
 }
 
 .mistakes-made {
