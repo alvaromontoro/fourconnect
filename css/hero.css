@@ -1,3 +1,7 @@
+.hero {
+  margin-block: 0;
+}
+
 .hero .heading {
   text-align: center;
 }
