@@ -1,6 +1,5 @@
 .more-games {
   display: flex;
-  flex: 1;
   flex-direction: column;
   gap: 3em;
   margin-block: 0;

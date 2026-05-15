@@ -58,6 +58,26 @@
   width: 100%;
 }
 
+.accent {
+  color: var(--accent);
+}
+
+.tablet, .pc {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .tablet {
+    display: unset;
+  }
+}
+
+@media (min-width: 768px) {
+  .pc {
+    display: unset;
+  }
+}
+
 .pill {
   background: var(--accent);
   border-radius: 5em;
@@ -103,6 +123,11 @@ h1, h2, h3 {
   font-family: Poppins, Inter, -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: 500;
   margin: 0;
+}
+
+main {
+  flex: 1;
+  align-items: start;
 }
 
 /* .ac-container {

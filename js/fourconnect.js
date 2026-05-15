@@ -234,6 +234,7 @@ class FourConnect extends HTMLElement {
   container-type: inline-size;
   width: 100%;
   margin: auto;
+	aspect-ratio: 668/629;
 
   @media (min-width: 768px) {
     --size: 500px;
@@ -300,7 +301,7 @@ h2 {
 
   button {
     font-size: 2.2em;
-    font-size: clamp(13px, 2em, 20px);
+    font-size: clamp(11px, 2.25em, 20px);
     position: relative;
     width: 100%;
     height: 100%;

@@ -1,0 +1,20 @@
+.export {
+  .more-games,
+  footer,
+  nav[aria-label] {
+    display: none;
+  }
+
+  header {
+    background: transparent;
+    justify-content: end;
+  }
+
+  header > div {
+    justify-content: end;
+  }
+
+  h1 {
+    translate: 0 70px;
+  }
+}

@@ -1,0 +1,45 @@
+.section .heading {
+  margin-block-end: 3em;
+}
+
+.section main h3 {
+  font-size: 2em;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  margin-block-start: 2em;
+}
+
+.section main ul,
+.section main ol {
+  padding-inline-start: 2.5em;
+}
+
+.section main li {
+  font-size: 1.25em;
+  line-height: 1.5;
+  margin-block: 0.75em;
+}
+
+.section main li::marker {
+  font-size: 1.5em;
+  color: var(--accent);
+}
+
+@media (min-width: 768px) {
+
+  .section .heading {
+    gap: 1.5em;
+    grid-template-columns: 1fr;
+    margin-block: 2em 3em;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .section hgroup {
+    align-items: center;
+  }
+
+  .section .hero {
+    grid-template-columns: 1fr;
+  }
+}

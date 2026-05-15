@@ -15,7 +15,7 @@
     <meta property="og:image" content="https://fourconnect.net/media/thumb.jpg" />
     <meta property="og:description" content="4Connect is a daily puzzle game where you find connections between words." />
 
-    <title>4Connect</title>
+    <title>4Connect - {TITLE}</title>
 
     <link rel="stylesheet" href="./css/styles.css">
     <script src="./js/code.js" defer></script>
@@ -33,7 +33,7 @@
             <span class="a11y-hidden">Toggle menu</span>
           </button>
           <ul id="main-menu">
-            <li><a href="./index.html" aria-current="page" data-url="home">Home</a></li>
+            <li><a href="./index.html" data-url="home">Home</a></li>
             <li><a href="./how-to-play.html" data-url="how-to-play">How to Play</a></li>
             <li><a href="./archive.html" data-url="archive">Archive</a></li>
             <li><a href="./about.html" data-url="about">About</a></li>
@@ -44,77 +44,8 @@
 
     <main>
 
-      <section class="hero container">
-        <div class="heading">
-          <hgroup>
-            <p>Today's game</p>
-            <h2>Daily Puzzle</h2>
-          </hgroup>
-          <time datetime="2026-05-14" class="game-date pill">May 14, 2026</time>
-          <div class="instructions">
-            <p>16 words.</p>
-            <p>4 categories.</p>
-            <p>Find the connection.</p>
-          </div>
-        </div>
-
-        <div class="game">
-          <four-connect data='[
-            {"name":"Reds", "values":["Crimson","Salmon","Fire<wbr>Brick","Light<wbr>Coral"]},
-            {"name":"Yellows", "values":["Moccasin","Peach<wbr>Puff","Lemon<wbr>Chiffon","Gold"]},
-            {"name":"Blues", "values": ["Cadet<wbr>Blue","Cyan","Turquoise","Navy"]},
-            {"name":"Purples", "values": ["Lavender","Thistle","Plum","Orchid"]}
-          ]'></four-connect>
-        </div>
-
-        <!-- <div class="ac-container">
-          <div>
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4312629628022354" crossorigin="anonymous"></script>
-            </!-- 4Connect-1 --/>
-            <ins class="adsbygoogle"
-                style="display:block"
-                data-ad-client="ca-pub-4312629628022354"
-                data-ad-slot="1114095098"
-                data-ad-format="auto"
-                data-full-width-responsive="true"></ins>
-            <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-          </div>
-        </div> -->
-      </section>
-
-      <section class="more-games container">
-        <section class="previous">
-          <h2 id="previous-games">
-            Previous Games
-          </h2>
-          <ul>
-            <li><a href="./archive.html#2026-05-11">Mar 11</a></li>
-            <li><a href="./archive.html#2026-05-10">Mar 10</a></li>
-            <li><a href="./archive.html#2026-05-09">Mar 09</a></li>
-            <li><a href="./archive.html#2026-05-08">Mar 08</a></li>
-            <li><a href="./archive.html#2026-05-07">Mar 07</a></li>
-            <li><a href="./archive.html#2026-05-06">Mar 06</a></li>
-            <li><a href="./archive.html">View All <span class="a11y-hidden">previous games</span></a></li>
-          </ul>
-        </section>
-        <section class="by-category">
-          <h2 id="by-category-games">
-            Games by Category
-          </h2>
-          <ul>
-            <li><a href="./archive.html#2026-05-11" class="tech">Tech</a></li>
-            <li><a href="./archive.html#2026-05-10" class="music">Music</a></li>
-            <li><a href="./archive.html#2026-05-09" class="food">Food</a></li>
-            <li><a href="./archive.html#2026-05-08" class="sports">Sports</a></li>
-            <li><a href="./archive.html#2026-05-07" class="world">World</a></li>
-            <li><a href="./archive.html#2026-05-06" class="art">Art</a></li>
-            <li><a href="./archive.html">View All <span class="a11y-hidden">categories</span></a></li>
-          </ul>
-        </section>
-      </section>
-
+      
+      
     </main>
     
     <footer>
@@ -124,7 +55,7 @@
             <img aria-hidden alt="" src="./media/logo.webp" width="24" height="24">
             4Connect
           </h2>
-          <small>&copy; 2026 <a href="https://studiokah.com">Studio Kah</a>. All rights reserved.</small>
+          <small>&copy; {YEAR} <a href="https://studiokah.com">Studio Kah</a>. All rights reserved.</small>
         </div>
         <div class="footer-links">
           <details>
@@ -154,7 +85,8 @@
             <summary><h3>Follow Us</h3></summary>
             <nav>
               <ul>
-                <li><a href="https://bsky.app/profile/fourconnect.net" target="_blank" rel="noopener noreferrer">Bluesky</a></li>
+                <li><a href="https://bluesky.com/studio.kah" target="_blank" rel="noopener noreferrer">Bluesky</a></li>
+                <li><a href="https://facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
                 <li><a href="https://www.instagram.com/4connect_game/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
               </ul>
             </nav>
