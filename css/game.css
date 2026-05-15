@@ -1,0 +1,39 @@
+.game-navigation {
+  display: flex;
+  justify-content: flex-end;
+  margin-block-end: 2em;
+  margin-block-start: 2em;
+}
+
+.game-navigation nav {
+  text-align: end;
+  width: 100%;
+}
+
+.game nav .next-game-link {
+  align-items: center;
+  background-color: var(--accent);
+  border-radius: 0.5em;
+  color: var(--accent-text);
+  display: inline-flex;
+  font-weight: 500;
+  gap: 0.5em;
+  padding: 0.75em 1.25em;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.game nav .next-game-link:hover {
+  background-color: oklch(from var(--accent) calc(l * 1.1) c h / 1);
+}
+
+.next-game-link::after {
+  background-color: currentColor;
+  content: "";
+  display: inline-block;
+  height: 1.25em;
+  mask-image: url("../media/chevron-right.svg");
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  width: 1.25em;
+}

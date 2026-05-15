@@ -97,6 +97,10 @@ footer a {
   color: var(--footer-link) !important;
 }
 
+footer a:focus-visible {
+  outline: 2px solid;
+}
+
 @media (min-width: 768px) {
   footer h2 {
     font-size: 1.5em;

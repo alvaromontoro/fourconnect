@@ -78,9 +78,15 @@ h1 img {
 }
 
 #menu-toggle {
-  background: currentColor;
+  background: none;
   border: none;
   color: var(--header-text);
+}
+
+#menu-toggle::before {
+  background: currentColor;
+  content: "";
+  display: block;
   height: 2em;
   mask: url(../media/menu.svg) center center no-repeat;
   mask-size: contain;
@@ -88,7 +94,7 @@ h1 img {
   width: 2em;
 }
 
-#menu-toggle[aria-expanded="true"] {
+#menu-toggle[aria-expanded="true"]::before {
   mask-image: url(../media/cross.svg);
 }
 
