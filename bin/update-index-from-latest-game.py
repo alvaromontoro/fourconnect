@@ -10,6 +10,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 GAMES_DIR = ROOT / "games"
 INDEX_FILE = ROOT / "index.html"
+ARCHIVE_FILE = ROOT / "archive.html"
 
 
 def parse_iso_date(value: str) -> date:
@@ -27,8 +28,9 @@ def format_short_date(value: date) -> str:
 
 
 def find_latest_game_data_files(limit: int = 7) -> list[tuple[date, Path]]:
-    """Find latest N game data files, sorted by date descending."""
+    """Find latest N game data files, sorted by date descending, up to today."""
     games = []
+    today = date.today()
 
     for data_file in GAMES_DIR.glob("*/*/*/data.json"):
         try:
@@ -36,6 +38,10 @@ def find_latest_game_data_files(limit: int = 7) -> list[tuple[date, Path]]:
             month = int(data_file.parts[-3])
             day = int(data_file.parts[-2])
             current_date = date(year, month, day)
+
+            # Skip future dates
+            if current_date > today:
+                continue
         except (ValueError, IndexError):
             continue
 
@@ -55,10 +61,67 @@ def build_previous_games_html(games_with_data: list[tuple[date, dict]]) -> str:
         date_str = game_date.isoformat()
         display = format_short_date(game_date)
         items.append(f'            <li><a href="/archive.html#{date_str}">{display}</a></li>')
-    
+
     # Add "View All" link
     items.append('            <li><a href="/archive.html">View All <span class="a11y-hidden">previous games</span></a></li>')
     return "\n".join(items)
+
+
+def normalize_css_class(value: str) -> str:
+    return re.sub(r"[^a-z0-9_-]+", "-", value.strip().lower()).strip("-")
+
+
+def build_archive_item_html(game_date: date, game_data: dict) -> str:
+    href = f"/games/{game_date:%Y/%m/%d}"
+    date_str = game_date.isoformat()
+    display = format_short_date(game_date)
+
+    categories = game_data.get("categories") or []
+    css_class = ""
+    if categories:
+        css_class = normalize_css_class(str(categories[0]))
+
+    class_attr = f' class="{css_class}"' if css_class else ""
+    return f'          <li><a href="{href}"{class_attr}><time datetime="{date_str}">{display}</time></a></li>'
+
+
+def update_archive_html(current_date: date, current_data: dict, max_items: int = 35) -> bool:
+    html = ARCHIVE_FILE.read_text(encoding="utf-8")
+
+    section_match = re.search(
+        r"(<section class=\"more-games\">\s*<ul>)(.*?)(</ul>\s*</section>)",
+        html,
+        flags=re.DOTALL,
+    )
+    if not section_match:
+        return False
+
+    list_html = section_match.group(2)
+    existing_items = re.findall(r"<li>.*?</li>", list_html, flags=re.DOTALL)
+
+    date_str = current_date.isoformat()
+    href_fragment = f"/games/{current_date:%Y/%m/%d}"
+
+    filtered_items = []
+    for item in existing_items:
+        if f'datetime="{date_str}"' in item:
+            continue
+        if href_fragment in item:
+            continue
+        filtered_items.append(item.strip())
+
+    new_item = build_archive_item_html(current_date, current_data).strip()
+    updated_items = [new_item] + filtered_items
+    updated_items = [f"          {item}" for item in updated_items[:max_items]]
+
+    new_section = section_match.group(1) + "\n" + "\n".join(updated_items) + "\n        " + section_match.group(3)
+    updated = html[:section_match.start()] + new_section + html[section_match.end():]
+
+    if updated == html:
+        return False
+
+    ARCHIVE_FILE.write_text(updated, encoding="utf-8")
+    return True
 
 
 def update_index_html(
@@ -143,7 +206,7 @@ def main() -> None:
     # Build previous games section
     previous_games_html = build_previous_games_html(games_with_data)
 
-    changed = update_index_html(
+    index_changed = update_index_html(
         current_date,
         date_long,
         game_title,
@@ -152,8 +215,12 @@ def main() -> None:
         previous_games_html,
     )
 
+    archive_changed = update_archive_html(current_date, current_data, max_items=35)
+
+    changed = index_changed or archive_changed
+
     if changed:
-        print(f"Updated {INDEX_FILE} with latest game and previous games")
+        print(f"Updated {INDEX_FILE} and {ARCHIVE_FILE} with latest game")
     else:
         print("No changes needed")
 
