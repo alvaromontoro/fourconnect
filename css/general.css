@@ -90,6 +90,27 @@
   padding: 0.5em 1.25em;
 }
 
+.skip-to-main {
+  height: 1px;
+  mask: url();
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+}
+
+.skip-to-main:focus {
+  background: var(--primary);
+  color: var(--text);
+  height: auto;
+  left: 1em;
+  mask: none;
+  padding: 0.5em 1em;
+  position: fixed;
+  top: 1em;
+  width: auto;
+  z-index: 1000;
+}
+
 html {
   background-color: var(--primary);
   background-image: linear-gradient(var(--primary) var(--header-size), var(--primary-light));
