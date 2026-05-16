@@ -60,7 +60,7 @@ def build_previous_games_html(games_with_data: list[tuple[date, dict]]) -> str:
     for game_date, data in games_with_data[1:7]:
         date_str = game_date.isoformat()
         display = format_short_date(game_date)
-        items.append(f'            <li><a href="/archive.html#{date_str}">{display}</a></li>')
+        items.append(f'            <li><a href="/games/{game_date:%Y/%m/%d}">{display}</a></li>')
 
     # Add "View All" link
     items.append('            <li><a href="/archive.html">View All <span class="a11y-hidden">previous games</span></a></li>')
