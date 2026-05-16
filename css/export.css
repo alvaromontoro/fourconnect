@@ -15,6 +15,10 @@
   }
 
   h1 {
-    translate: 0 70px;
+    translate: 0 100px;
+  }
+
+  .hero.container {
+    margin-block-start: 60px;
   }
 }
