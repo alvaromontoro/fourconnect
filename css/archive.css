@@ -1,0 +1,46 @@
+.archive .more-games ul li {
+  display: list-item !important;
+  margin: 0;
+}
+
+.archive .more-games ul li:last-child a::before {
+  mask-image: url("../media/calendar-full.svg");
+}
+
+
+.archive .more-games ul li a.tech::before { mask-image: url("../media/laptop.svg"); }
+.archive .more-games ul li a.music::before { mask-image: url("../media/music-note.svg"); }
+.archive .more-games ul li a.food::before { mask-image: url("../media/dinner.svg"); }
+.archive .more-games ul li a.sports::before { mask-image: url("../media/bicycle.svg"); }
+.archive .more-games ul li a.world::before { mask-image: url("../media/earth.svg"); }
+.archive .more-games ul li a.art::before { mask-image: url("../media/picture.svg"); }
+
+.archive.section main ul,
+.archive.section main ol {
+  display: grid;
+  font-size: clamp(8px, 2.25vmin, 20px);
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.75em;
+  margin-inline: auto;
+  max-width: 800px;
+  padding-inline-start: 0em;
+  width: 100%;
+}
+
+.archive .more-games ul li a {
+  gap: 0.125em;
+}
+
+@media (min-width: 768px) {
+  .archive.section main ul,
+  .archive.section main ol {
+    font-size: clamp(12px, 1.75vmin, 20px);
+    gap: 0.75em;
+    grid-template-columns: repeat(7, 1fr);
+  }
+
+  .archive.section main ul a,
+  .archive.section main ol a {
+    gap: 0em;
+  }
+}
