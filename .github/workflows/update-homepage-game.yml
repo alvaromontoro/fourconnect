@@ -1,0 +1,43 @@
+name: Update Homepage Game
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'games/**/data.json'
+  schedule:
+    - cron: '15 0 * * *'
+
+permissions:
+  contents: write
+
+jobs:
+  update-index:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Update index.html from latest game
+        run: python3 bin/update-index-from-latest-game.py
+
+      - name: Commit and push if changed
+        run: |
+          if git diff --quiet -- index.html; then
+            echo "No index changes"
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "chore: update homepage game"
+          git push
