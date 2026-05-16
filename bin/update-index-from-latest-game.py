@@ -20,9 +20,14 @@ def format_long_date(value: date) -> str:
     return value.strftime("%B %d, %Y").replace(" 0", " ")
 
 
-def find_latest_game_data_file() -> Path:
-    latest = None
-    latest_date = None
+def format_short_date(value: date) -> str:
+    """Format date as 'Mon DD' (e.g., 'May 11')."""
+    return value.strftime("%b %d").replace(" 0", " ")
+
+
+def find_latest_game_data_files(limit: int = 7) -> list[tuple[date, Path]]:
+    """Find latest N game data files, sorted by date descending."""
+    games = []
 
     for data_file in GAMES_DIR.glob("*/*/*/data.json"):
         try:
@@ -33,19 +38,56 @@ def find_latest_game_data_file() -> Path:
         except (ValueError, IndexError):
             continue
 
-        if latest_date is None or current_date > latest_date:
-            latest_date = current_date
-            latest = data_file
+        games.append((current_date, data_file))
 
-    if latest is None:
+    if not games:
         raise RuntimeError("No game data files found in games/YYYY/MM/DD/data.json")
 
-    return latest
+    games.sort(key=lambda x: x[0], reverse=True)
+    return games[:limit]
 
 
-def update_index_html(game_date: date, date_long: str, game_payload: str, previous_link: str) -> bool:
+def build_previous_games_html(games_with_data: list[tuple[date, dict]]) -> str:
+    """Build previous games list (skip first/current game, take next 6)."""
+    items = []
+    for game_date, data in games_with_data[1:7]:
+        date_str = game_date.isoformat()
+        display = format_short_date(game_date)
+        items.append(f'            <li><a href="/archive.html#{date_str}">{display}</a></li>')
+    
+    # Add "View All" link
+    items.append('            <li><a href="/archive.html">View All <span class="a11y-hidden">previous games</span></a></li>')
+    return "\n".join(items)
+
+
+def build_category_games_html(games_with_data: list[tuple[date, dict]]) -> str:
+    """Build games by category list (skip first/current game, take next 6)."""
+    items = []
+    for game_date, data in games_with_data[1:7]:
+        date_str = game_date.isoformat()
+        categories = data.get("categories", [])
+        if not categories:
+            continue
+        category = categories[0]
+        category_class = category.lower().replace(" ", "-")
+        items.append(f'            <li><a href="/archive.html#{date_str}" class="{category_class}">{category}</a></li>')
+    
+    # Add "View All" link
+    items.append('            <li><a href="/archive.html">View All <span class="a11y-hidden">categories</span></a></li>')
+    return "\n".join(items)
+
+
+def update_index_html(
+    game_date: date,
+    date_long: str,
+    game_payload: str,
+    previous_link: str,
+    previous_games_html: str,
+    category_games_html: str,
+) -> bool:
     html = INDEX_FILE.read_text(encoding="utf-8")
 
+    # Update game date
     updated = re.sub(
         r'<time datetime="[^"]+" class="game-date pill">[^<]+</time>',
         f'<time datetime="{game_date.isoformat()}" class="game-date pill">{date_long}</time>',
@@ -53,6 +95,7 @@ def update_index_html(game_date: date, date_long: str, game_payload: str, previo
         count=1,
     )
 
+    # Update game data
     updated = re.sub(
         r"<four-connect data='[^']*'></four-connect>",
         f"<four-connect data='{game_payload}'></four-connect>",
@@ -60,10 +103,29 @@ def update_index_html(game_date: date, date_long: str, game_payload: str, previo
         count=1,
     )
 
+    # Update "Play Yesterday's Game" link
     updated = re.sub(
         r'<a href="[^"]+" class="play-now-link">',
         f'<a href="{previous_link}" class="play-now-link">',
         updated,
+        count=1,
+    )
+
+    # Update previous games list
+    updated = re.sub(
+        r"(<section class=\"previous\">.*?<ul>)(.*?)(</ul>\s*</section>)",
+        r"\1\n" + previous_games_html + "\n          " + r"\3",
+        updated,
+        flags=re.DOTALL,
+        count=1,
+    )
+
+    # Update games by category list
+    updated = re.sub(
+        r"(<section class=\"by-category\">.*?<ul>)(.*?)(</ul>\s*</section>)",
+        r"\1\n" + category_games_html + "\n          " + r"\3",
+        updated,
+        flags=re.DOTALL,
         count=1,
     )
 
@@ -75,23 +137,37 @@ def update_index_html(game_date: date, date_long: str, game_payload: str, previo
 
 
 def main() -> None:
-    data_file = find_latest_game_data_file()
-    data = json.loads(data_file.read_text(encoding="utf-8"))
+    game_files = find_latest_game_data_files(limit=7)
 
-    date_from_path = date(int(data_file.parts[-4]), int(data_file.parts[-3]), int(data_file.parts[-2]))
-    date_str = data.get("date", date_from_path.isoformat())
-    game_date = parse_iso_date(date_str)
+    # Load all game data
+    games_with_data = []
+    for game_date, data_file in game_files:
+        data = json.loads(data_file.read_text(encoding="utf-8"))
+        games_with_data.append((game_date, data))
 
-    date_long = data.get("dateLong", format_long_date(game_date))
-    game_payload = json.dumps(data["game"], separators=(",", ":"))
+    # Current game (first/latest)
+    current_date, current_data = games_with_data[0]
+    date_long = current_data.get("dateLong", format_long_date(current_date))
+    game_payload = json.dumps(current_data["game"], separators=(",", ":"))
 
-    previous_date = game_date - timedelta(days=1)
+    previous_date = current_date - timedelta(days=1)
     previous_link = f"/games/{previous_date:%Y/%m/%d}/"
 
-    changed = update_index_html(game_date, date_long, game_payload, previous_link)
+    # Build previous games and category sections
+    previous_games_html = build_previous_games_html(games_with_data)
+    category_games_html = build_category_games_html(games_with_data)
+
+    changed = update_index_html(
+        current_date,
+        date_long,
+        game_payload,
+        previous_link,
+        previous_games_html,
+        category_games_html,
+    )
 
     if changed:
-        print(f"Updated {INDEX_FILE} using {data_file}")
+        print(f"Updated {INDEX_FILE} with latest game and previous games/categories")
     else:
         print("No changes needed")
 
