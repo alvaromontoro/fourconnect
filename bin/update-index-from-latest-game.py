@@ -60,30 +60,12 @@ def build_previous_games_html(games_with_data: list[tuple[date, dict]]) -> str:
     return "\n".join(items)
 
 
-def build_category_games_html(games_with_data: list[tuple[date, dict]]) -> str:
-    """Build games by category list (skip first/current game, take next 6)."""
-    items = []
-    for game_date, data in games_with_data[1:7]:
-        date_str = game_date.isoformat()
-        categories = data.get("categories", [])
-        if not categories:
-            continue
-        category = categories[0]
-        category_class = category.lower().replace(" ", "-")
-        items.append(f'            <li><a href="/archive.html#{date_str}" class="{category_class}">{category}</a></li>')
-    
-    # Add "View All" link
-    items.append('            <li><a href="/archive.html">View All <span class="a11y-hidden">categories</span></a></li>')
-    return "\n".join(items)
-
-
 def update_index_html(
     game_date: date,
     date_long: str,
     game_payload: str,
     previous_link: str,
     previous_games_html: str,
-    category_games_html: str,
 ) -> bool:
     html = INDEX_FILE.read_text(encoding="utf-8")
 
@@ -120,15 +102,6 @@ def update_index_html(
         count=1,
     )
 
-    # Update games by category list
-    updated = re.sub(
-        r"(<section class=\"by-category\">.*?<ul>)(.*?)(</ul>\s*</section>)",
-        r"\1\n" + category_games_html + "\n          " + r"\3",
-        updated,
-        flags=re.DOTALL,
-        count=1,
-    )
-
     if updated == html:
         return False
 
@@ -153,9 +126,8 @@ def main() -> None:
     previous_date = current_date - timedelta(days=1)
     previous_link = f"/games/{previous_date:%Y/%m/%d}/"
 
-    # Build previous games and category sections
+    # Build previous games section
     previous_games_html = build_previous_games_html(games_with_data)
-    category_games_html = build_category_games_html(games_with_data)
 
     changed = update_index_html(
         current_date,
@@ -163,11 +135,10 @@ def main() -> None:
         game_payload,
         previous_link,
         previous_games_html,
-        category_games_html,
     )
 
     if changed:
-        print(f"Updated {INDEX_FILE} with latest game and previous games/categories")
+        print(f"Updated {INDEX_FILE} with latest game and previous games")
     else:
         print("No changes needed")
 
