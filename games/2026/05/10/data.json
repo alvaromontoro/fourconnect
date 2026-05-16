@@ -1,0 +1,7 @@
+{
+  "title": "Web Dev (IV)",
+  "date": "2026-05-10",
+  "dateLong": "May 10, 2026",
+  "categories": ["tech", "webdev"],
+  "game": [{"name":"Single-Letter HTML Tags", "values":["a","i","b","u"]},{"name":"HTML Tags Starting with D", "values":["dd","dl","dt","dir"]},{"name":"CSS Math Functions", "values": ["min","max","mod","rem"]},{"name":"Color Functions", "values": ["lab","hwb","hsl","lch"]}]
+}

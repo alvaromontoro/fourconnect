@@ -3,7 +3,7 @@
   <head>
     <script>
       // check if current date is before game's date, if so, redirect to home page
-      const gameDate = new Date("2026-05-13T00:00:00");
+      const gameDate = new Date("2026-05-08T00:00:00");
       const today = new Date();
       if (today < gameDate) {
         window.location.href = "/";
@@ -23,7 +23,7 @@
     <meta property="og:image" content="https://fourconnect.net/media/thumb.jpg" />
     <meta property="og:description" content="4Connect is a daily puzzle game where you find connections between words." />
 
-    <title>4Connect - May 13, 2026</title>
+    <title>4Connect - May 08, 2026</title>
 
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/game.css">
@@ -65,10 +65,10 @@
         <div class="heading">
           <hgroup>
             <p>Game</p>
-            <h2>World Cities</h2>
+            <h2>World Cup'26</h2>
           </hgroup>
           <p>
-            <time datetime="2026-05-13" class="game-date pill">May 13, 2026</time>
+            <time datetime="2026-05-08" class="game-date pill">May 08, 2026</time>
           </p>
           <div class="instructions">
             <p>16 words.</p>
@@ -78,7 +78,7 @@
         </div>
 
         <div class="game">
-          <four-connect data='[{"name":"Cities in France", "values":["Tours","Nice","Valence","Marseille"]},{"name":"Cities in Italy", "values":["Naples","Rome","Venice","Turin"]},{"name":"Cities in Russia", "values": ["Kazan","Samara","Barnaul","Saint Petersburg"]},{"name":"Cities in Texas", "values": ["Paris","Florence","Moscow","San Antonio"]}]'></four-connect>
+          <four-connect data='[{ "name": "Have won the World Cup", "values": [ "Spain", "Argentina", "England", "Brazil" ] }, { "name": "Have hosted a World Cup (before 2026)", "values": [ "USA", "South Africa", "Mexico", "South Korea" ] }, { "name": "First participation in 2026", "values": [ "Cabo Verde", "Curaçao", "Jordan", "Uzbekistan"] }, { "name": "Did not qualify in 2026", "values": [ "Chile", "Italy", "Hungary", "Nigeria"] }]'></four-connect>
         </div>
 
         <!-- <div class="ac-container">
@@ -100,7 +100,7 @@
 
       <section class="game-navigation container">
         <nav aria-label="Game navigation">
-          <a href="/games/2026/05/12" class="next-game-link">Previous Day Game</a>
+          <a href="/" class="next-game-link">Go to Home</a>
         </nav>
       </section>
 

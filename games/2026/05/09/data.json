@@ -1,0 +1,7 @@
+{
+  "title": "Web Dev (V)",
+  "date": "2026-05-09",
+  "dateLong": "May 09, 2026",
+  "categories": ["tech", "webdev"],
+  "game": [{"name":"HTML Attributes", "values":["min","max","translate","disabled"]},{"name":"JavaScript Functions", "values":["round","filter","sqrt","anchor"]},{"name":"SVG Tags", "values": ["rect","circle","ellipse","path"]},{"name":"Color Functions", "values": ["color","rgb","lab","contrast-color"]}]
+}

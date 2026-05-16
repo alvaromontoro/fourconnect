@@ -1,0 +1,7 @@
+{
+  "title": "Web Dev (II)",
+  "date": "2026-05-12",
+  "dateLong": "May 12, 2026",
+  "categories": ["tech", "webdev"],
+  "game": [{"name":"flex-", "values":["basis","flow","wrap","shrink"]},{"name":"font-", "values":["palette","family","kerning","variant"]},{"name":"grid-", "values": ["area","template","row","column"]},{"name":"(in)line", "values": ["grid","height","style","padding"]}]
+}

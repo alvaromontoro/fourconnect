@@ -1,0 +1,7 @@
+{
+  "title": "World Cup'26",
+  "date": "2026-05-08",
+  "dateLong": "May 08, 2026",
+  "categories": ["sports", "soccer"],
+  "game": [{ "name": "Have won the World Cup", "values": [ "Spain", "Argentina", "England", "Brazil" ] }, { "name": "Have hosted a World Cup (before 2026)", "values": [ "USA", "South Africa", "Mexico", "South Korea" ] }, { "name": "First participation in 2026", "values": [ "Cabo Verde", "Curaçao", "Jordan", "Uzbekistan"] }, { "name": "Did not qualify in 2026", "values": [ "Chile", "Italy", "Hungary", "Nigeria"] }]
+}

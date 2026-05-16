@@ -1,0 +1,7 @@
+{
+  "title": "Web Dev (III)",
+  "date": "2026-05-11",
+  "dateLong": "May 11, 2026",
+  "categories": ["tech", "webdev"],
+  "game": [{"name":"Colors", "values":["moccasin","khaki","tan","yellow"]},{"name":"HTML Tags", "values":["image","var","progress","slot"]},{"name":"Hiding Content", "values": ["visibility","display","clip-path","mask"]},{"name":"Functions", "values": ["sin","round","opacity","sepia"]}]
+}
