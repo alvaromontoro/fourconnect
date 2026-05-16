@@ -1,28 +1,36 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <script>
+      // check if current date is before game's date, if so, redirect to home page
+      const gameDate = new Date("2026-05-14T00:00:00");
+      const today = new Date();
+      if (today < gameDate) {
+        window.location.href = "/";
+      }
+    </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-adsense-account" content="ca-pub-4312629628022354">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="Alvaro Montoro (alvaromontoro@gmail.com)" />
-    <meta name="keywords" content="fourconnect,4connect,game,puzzle,daily puzzle,contact" />
-    <meta name="description" content="Contact 4Connect through Bluesky, Instagram, or email." />
+    <meta name="keywords" content="fourconnect,4connect,game,puzzle,daily puzzle" />
+    <meta name="description" content="4Connect is a daily puzzle game where you find connections between words." />
     <meta name="theme-color" content="#7d44db" />
-    <meta property="og:title" content="4Connect" />
+    <meta property="og:title" content="4Connect - Game" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://fourconnect.net/contact.html" />
+    <meta property="og:url" content="https://fourconnect.net/game.html" />
     <meta property="og:image" content="https://fourconnect.net/media/thumb.jpg" />
-    <meta property="og:description" content="Contact 4Connect through Bluesky, Instagram, or email." />
+    <meta property="og:description" content="4Connect is a daily puzzle game where you find connections between words." />
 
-    <title>4Connect - Contact</title>
+    <title>4Connect - May 14, 2026</title>
 
     <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/section.css">
+    <link rel="stylesheet" href="/css/game.css">
     <script src="/js/code.js" defer></script>
     <script src="/js/fourconnect.js" defer></script>
   </head>
-  <body class="contact section">
+  <body class="game">
     <header>
       <div class="container">
         <h1>
@@ -43,36 +51,58 @@
       </div>
     </header>
 
-    <main class="container">
-      <section class="hero">
+    <main>
+
+      <section class="hero container">
         <div class="heading">
           <hgroup>
-            <p>Get in touch</p>
-            <h2>Contact</h2>
+            <p>Game</p>
+            <h2>Web Colors</h2>
           </hgroup>
-          <span class="pill">We'd love to hear from you</span>
+          <p>
+            <time datetime="2026-05-14" class="game-date pill">May 14, 2026</time>
+          </p>
+          <div class="instructions">
+            <p>16 words.</p>
+            <p>4 categories.</p>
+            <p>Find the connection.</p>
+          </div>
         </div>
+
+        <div class="game">
+          <four-connect data='[
+            {"name":"Reds", "values":["Crimson","Salmon","Fire<wbr>Brick","Light<wbr>Coral"]},
+            {"name":"Yellows", "values":["Moccasin","Peach<wbr>Puff","Lemon<wbr>Chiffon","Gold"]},
+            {"name":"Blues", "values": ["Cadet<wbr>Blue","Cyan","Turquoise","Navy"]},
+            {"name":"Purples", "values": ["Lavender","Thistle","Plum","Orchid"]}
+          ]'></four-connect>
+        </div>
+
+        <!-- <div class="ac-container">
+          <div>
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4312629628022354" crossorigin="anonymous"></script>
+            </!-- 4Connect-1 --/>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-client="ca-pub-4312629628022354"
+                data-ad-slot="1114095098"
+                data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+          </div>
+        </div> -->
       </section>
 
-      <section aria-labelledby="contact-options-title">
-        <h3 id="contact-options-title">Contact options</h3>
-        <p>
-          Want to catch up with us? Social media is the fastest way to reach us.
-          Tag us when you share your results, favorite categories, or winning streaks.
-          We love seeing your posts and community highlights.
-        </p>
-        <ul>
-          <li><a href="https://bsky.app/profile/fourconnect.net" target="_blank" rel="noopener noreferrer">Bluesky</a></li>
-          <li><a href="https://www.instagram.com/4connect_game/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-        </ul>
-        <p>
-          For support, suggestions, or press, email us at
-          <a href="mailto:info@fourconnect.net">info@fourconnect.net</a>.
-          Spam messages are ignored and will be reported.
-        </p>
+      <section class="game-navigation container">
+        <nav aria-label="Game navigation">
+          <a href="/games/2026/05/13" class="next-game-link">Previous Day Game</a>
+        </nav>
       </section>
+
     </main>
-
+    
     <footer>
       <div class="container footer-content">
         <div>
@@ -93,7 +123,7 @@
               </ul>
             </nav>
           </details>
-
+          
           <details>
             <summary><h3>About Us</h3></summary>
             <nav>

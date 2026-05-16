@@ -1,0 +1,7 @@
+{
+  "title": "Soccer Teams",
+  "date": "2026-05-16",
+  "dateLong": "May 16, 2026",
+  "categories": ["sports"],
+  "game": [{"name":"Mexico", "values":["Toluca","Monterrey","Guadalajara","Leon"]},{"name":"Spain", "values":["Real Madrid","Barcelona","Valladolid","Celta"]},{"name":"Netherlands", "values": ["Twente","Heracles","Ajax","AZ"]},{"name":"France", "values": ["Lens","Nantes","PSG","Angers"]}]
+}

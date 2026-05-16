@@ -1,0 +1,7 @@
+{
+  "title": "World Cities",
+  "date": "2026-05-13",
+  "dateLong": "May 13, 2026",
+  "categories": ["world", "geo"],
+  "game": [{"name":"Cities in France", "values":["Tours","Nice","Valence","Marseille"]},{"name":"Cities in Italy", "values":["Naples","Rome","Venice","Turin"]},{"name":"Cities in Russia", "values": ["Kazan","Samara","Barnaul","Saint Petersburg"]},{"name":"Cities in Texas", "values": ["Paris","Florence","Moscow","San Antonio"]}]
+}

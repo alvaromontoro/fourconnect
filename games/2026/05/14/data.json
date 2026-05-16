@@ -1,0 +1,12 @@
+{
+  "title": "Web Colors",
+  "date": "2026-05-14",
+  "dateLong": "May 14, 2026",
+  "categories": ["tech", "webdev", "colors"],
+  "game": [
+            {"name":"Reds", "values":["Crimson","Salmon","FireBrick","LightCoral"]},
+            {"name":"Yellows", "values":["Moccasin","PeachPuff","LemonChiffon","Gold"]},
+            {"name":"Blues", "values": ["CadetBlue","Cyan","Turquoise","Navy"]},
+            {"name":"Purples", "values": ["Lavender","Thistle","Plum","Orchid"]}
+          ]
+}

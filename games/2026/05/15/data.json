@@ -1,0 +1,7 @@
+{
+  "title": "Web Dev (I)",
+  "date": "2026-05-15",
+  "dateLong": "May 15, 2026",
+  "categories": ["tech", "webdev"],
+  "game": [{"name":"Form Tags", "values":["button","input","label","select"]},{"name":"Letters than can be HTML tags", "values":["a","s","u","q"]},{"name":"Emphasis HTML Tags", "values":["i","em","strong","b"]},{"name":"CSS System Colors", "values":["canvas","field","mark","buttontext"]}]
+}
