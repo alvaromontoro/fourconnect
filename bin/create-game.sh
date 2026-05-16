@@ -12,9 +12,36 @@ PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
 
 echo -e "${BLUE}=== 4Connect Game Creator ===${NC}\n"
 
+# Find the latest game date
+LATEST_GAME_PATH=$(find "$PROJECT_ROOT/games" -mindepth 3 -maxdepth 3 -type d | sort | tail -1)
+
+if [ -z "$LATEST_GAME_PATH" ]; then
+  # No games exist, use a default starting date
+  SUGGESTED_DATE="2026-01-01"
+  LATEST_DATE_STR=""
+else
+  # Extract year, month, day from path: /path/to/games/YYYY/MM/DD
+  DAY=$(basename "$LATEST_GAME_PATH")
+  MONTH=$(basename "$(dirname "$LATEST_GAME_PATH")")
+  YEAR=$(basename "$(dirname "$(dirname "$LATEST_GAME_PATH")")")
+  LATEST_DATE_STR="$YEAR-$MONTH-$DAY"
+  
+  # Calculate next date (add 1 day)
+  SUGGESTED_DATE=$(date -j -v+1d -f "%Y-%m-%d" "$LATEST_DATE_STR" "+%Y-%m-%d" 2>/dev/null || date -d "$LATEST_DATE_STR + 1 day" "+%Y-%m-%d" 2>/dev/null)
+fi
+
+echo -e "${BLUE}Latest game date: $LATEST_DATE_STR${NC}"
+echo -e "${BLUE}Suggested next date: $SUGGESTED_DATE${NC}\n"
+
 # Ask for game date
 while true; do
-  read -p "Enter game date (YYYY-MM-DD): " GAME_DATE
+  read -p "Enter game date (YYYY-MM-DD) or press Enter for [$SUGGESTED_DATE]: " GAME_DATE
+  
+  # Use suggested date if empty
+  if [ -z "$GAME_DATE" ]; then
+    GAME_DATE="$SUGGESTED_DATE"
+  fi
+  
   if [[ $GAME_DATE =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
     break
   else

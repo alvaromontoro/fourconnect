@@ -1,0 +1,7 @@
+{
+  "title": "World Cup (I)",
+  "date": "2026-05-17",
+  "dateLong": "May 17, 2026",
+  "categories": ["sports", "soccer"],
+  "game": [{ "name": "Men with more than 10 goals", "values": [ "Ronaldo", "Klose", "Fontaine", "Müller" ] },{ "name": "Men with less than 10 goals", "values": [ "Romário", "Raúl", "Zidane", "Cristiano Ronaldo" ] },{ "name": "Women with more than 10 goals", "values": [ "Marta", "Prinz", "Wambach", "Akers" ] },{ "name": "Women with less than 10 goals", "values": [ "Hamm", "Pettersen", "Ailing", "Rapinoe" ] }]
+}
