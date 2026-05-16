@@ -1,0 +1,7 @@
+{
+  "title": "Rock Bands",
+  "date": "2026-05-18",
+  "dateLong": "May 18, 2026",
+  "categories": ["music", "culture", "art"],
+  "game": [{"name":"American Rock Bands", "values":["Pearl Jam","Salmon","Stooges","Green Day"]},{"name":"British Rock Bands", "values":["Oasis","Beatles","Rolling Stones","Led Zeppelin"]},{"name":"Canadian Rock Bands", "values": ["Rush","Nickleback","Sum 41","Beaches"]},{"name":"Australian Rock Bands", "values": ["AC/DC","INXS","Cold Chisel","Tame Impala"]}]
+}
