@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import html as html_utils
 import json
 import re
 from datetime import date, datetime, timedelta
@@ -63,6 +64,7 @@ def build_previous_games_html(games_with_data: list[tuple[date, dict]]) -> str:
 def update_index_html(
     game_date: date,
     date_long: str,
+    game_title: str,
     game_payload: str,
     previous_link: str,
     previous_games_html: str,
@@ -77,10 +79,21 @@ def update_index_html(
         count=1,
     )
 
+    # Update game title
+    if game_title:
+        escaped_title = html_utils.escape(game_title)
+        updated = re.sub(
+            r'(<p class="game-title">\s*)(.*?)(\s*</p>)',
+            lambda m: f"{m.group(1)}{escaped_title}{m.group(3)}",
+            updated,
+            flags=re.DOTALL,
+            count=1,
+        )
+
     # Update game data
     updated = re.sub(
         r"<four-connect data='[^']*'></four-connect>",
-        f"<four-connect data='{game_payload}'></four-connect>",
+        lambda _m: f"<four-connect data='{game_payload}'></four-connect>",
         updated,
         count=1,
     )
@@ -121,6 +134,7 @@ def main() -> None:
     # Current game (first/latest)
     current_date, current_data = games_with_data[0]
     date_long = current_data.get("dateLong", format_long_date(current_date))
+    game_title = current_data.get("title", "")
     game_payload = json.dumps(current_data["game"], separators=(",", ":"))
 
     previous_date = current_date - timedelta(days=1)
@@ -132,6 +146,7 @@ def main() -> None:
     changed = update_index_html(
         current_date,
         date_long,
+        game_title,
         game_payload,
         previous_link,
         previous_games_html,
