@@ -1,0 +1,7 @@
+{
+  "title": "Art",
+  "date": "2026-05-22",
+  "dateLong": "May 22, 2026",
+  "categories": ["art"],
+  "game": [{ "name": "Renaissance Artists", "values": [ "da Vinci", "Botticelli", "Donatello", "van Eyck" ] },{ "name": "Romanticism Artists", "values": [ "Delacroix", "Friedrich", "Goya", "Géricault" ] },{ "name": "Surrealism Artists", "values": [ "Dalí", "Kahlo", "Magritte", "Breton" ] },{ "name": "Cubism Artists", "values": [ "Picasso", "Braque", "Juan Gris", "Delaunay" ] }]
+}

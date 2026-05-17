@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script>
+      // check if current date is before game's date, if so, redirect to home page
+      const gameDate = new Date("2026-05-19T00:00:00");
+      const today = new Date();
+      if (today < gameDate) {
+        window.location.href = "/";
+      }
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Alvaro Montoro (alvaromontoro@gmail.com)" />
+    <meta name="keywords" content="fourconnect,4connect,game,puzzle,daily puzzle" />
+    <meta name="description" content="4Connect is a daily puzzle game where you find connections between words." />
+    <meta name="theme-color" content="#7d44db" />
+    <meta property="og:title" content="4Connect - Game" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://fourconnect.net/game.html" />
+    <meta property="og:image" content="https://fourconnect.net/media/thumb.jpg" />
+    <meta property="og:description" content="4Connect is a daily puzzle game where you find connections between words." />
+    <link rel="monetization" href="https://fynbos.me/alvaro">
+
+    <title>4Connect - May 19, 2026</title>
+
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/game.css">
+    <script src="/js/code.js" defer></script>
+    <script src="/js/fourconnect.js" defer></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-438W7TCDDG"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-438W7TCDDG');
+    </script>
+  </head>
+  <body class="game">
+    <a href="#main" class="skip-to-main">Skip to main</a>
+    <header>
+      <div class="container">
+        <h1>
+          <img aria-hidden alt="" src="/media/logo.webp" width="32" height="32">
+          4Connect
+        </h1>
+        <nav aria-label="Main navigation">
+          <button id="menu-toggle" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle menu" hidden>
+            <span class="a11y-hidden">Toggle menu</span>
+          </button>
+          <ul id="main-menu">
+            <li><a href="/index.html" data-url="home">Home</a></li>
+            <li><a href="/how-to-play.html" data-url="how-to-play">How to Play</a></li>
+            <li><a href="/archive.html" data-url="archive">Archive</a></li>
+            <li><a href="/about.html" data-url="about">About</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+
+      <section class="hero container">
+        <div class="heading">
+          <hgroup>
+            <p>Game</p>
+            <h2>World Cup (II)</h2>
+          </hgroup>
+          <p>
+            <time datetime="2026-05-19" class="game-date pill">May 19, 2026</time>
+          </p>
+          <div class="instructions">
+            <p>16 words.</p>
+            <p>4 categories.</p>
+            <p>Find the connection.</p>
+          </div>
+        </div>
+
+        <div class="game">
+          <four-connect data='[{ "name": "Winners at home", "values": [ "Uruguay", "Italy", "England", "France" ] },{ "name": "Finalist but never won", "values": [ "Hungary", "Netherlands", "Croatia", "Sweden" ] },{ "name": "Winners at a different continent", "values": [ "Brazil", "Spain", "Argentina", "Germany" ] },{ "name": "Never made it to a final", "values": [ "Russia", "Portugal", "Chile", "Poland" ] }]'></four-connect>
+        </div>
+
+        <!-- <div class="ac-container">
+          <div>
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4312629628022354" crossorigin="anonymous"></script>
+            </!-- 4Connect-1 --/>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-client="ca-pub-4312629628022354"
+                data-ad-slot="1114095098"
+                data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+          </div>
+        </div> -->
+      </section>
+
+      <section class="game-navigation container">
+        <nav aria-label="Game navigation">
+          <a href="/games/2026/05/18" class="next-game-link">Previous Day Game</a>
+        </nav>
+      </section>
+
+    </main>
+    
+    <footer>
+      <div class="container footer-content">
+        <div>
+          <h2>
+            <img aria-hidden alt="" src="/media/logo.webp" width="24" height="24">
+            4Connect
+          </h2>
+          <small>&copy; 2026 <a href="https://studiokah.com">Studio Kah</a>. All rights reserved.</small>
+        </div>
+        <div class="footer-links">
+          <details>
+            <summary><h3>Game</h3></summary>
+            <nav>
+              <ul>
+                <li><a href="/how-to-play.html" data-url="how-to-play">How to Play</a></li>
+                <li><a href="/archive.html" data-url="archive">Archive</a></li>
+                <li><a href="/stats.html" data-url="stats">Stats</a></li>
+              </ul>
+            </nav>
+          </details>
+          
+          <details>
+            <summary><h3>About Us</h3></summary>
+            <nav>
+              <ul>
+                <li><a href="/about.html" data-url="about">About</a></li>
+                <li><a href="/contact.html" data-url="contact">Contact</a></li>
+                <li><a href="/privacy.html" data-url="privacy">Privacy</a></li>
+                <li><a href="/terms.html" data-url="terms">Terms of Use</a></li>
+              </ul>
+            </nav>
+          </details>
+
+          <details>
+            <summary><h3>Follow Us</h3></summary>
+            <nav>
+              <ul>
+                <li><a href="https://bsky.app/profile/fourconnect.net" target="_blank" rel="noopener noreferrer">Bluesky</a></li>
+                <li><a href="https://www.instagram.com/4connect_game/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+              </ul>
+            </nav>
+          </details>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

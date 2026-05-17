@@ -1,0 +1,7 @@
+{
+  "title": "World Cup (III)",
+  "date": "2026-05-21",
+  "dateLong": "May 21, 2026",
+  "categories": ["sports", "soccer"],
+  "game": [{ "name": "Never organized", "values": [ "China", "Netherlands", "Hungary", "Poland" ] },{ "name": "Future Organized", "values": [ "Morocco", "Portugal", "Spain", "Saudi Arabia" ] },{ "name": "Organized once", "values": [ "Switzerland", "Chile", "Sweden", "South Korea" ] },{ "name": "Organized more than once", "values": [ "Brazil", "Mexico", "Italy", "France" ] }]
+}
