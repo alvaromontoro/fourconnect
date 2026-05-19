@@ -1,0 +1,7 @@
+{
+  "title": "World Cup (VI)",
+  "date": "2026-05-26",
+  "dateLong": "May 26, 2026",
+  "categories": ["sports", "soccer"],
+  "game": [{ "name": "Scored in four different World Cups", "values": [ "Cristiano Ronaldo", "Pelé", "Miroslav Klose", "Lionel Messi" ] },{ "name": "Won Golden Boot but did not win tournament", "values": [ "Guillermo Stábile", "Gerd Müller", "Gary Lineker", "Davor Šuker" ] },{ "name": "Scored World Cup opening goal", "values": [ "Marcelo", "Philipp Lahm", "Jürgen Klinsmann", "Ademir" ] },{ "name": "Scored opening goal in a final", "values": [ "Andrés Iniesta", "Zinedine Zidane", "Ronaldo", "Geoff Hurst" ] }]
+}

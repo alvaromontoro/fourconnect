@@ -1,0 +1,7 @@
+{
+  "title": "World Cup (V)",
+  "date": "2026-05-24",
+  "dateLong": "May 24, 2026",
+  "categories": ["sports", "soccer"],
+  "game": [{ "name": "Players to score a hat trick", "values": [ "Gabriel Batistuta", "Pelé", "Kylian Mbappé", "Geoff Hurst" ] },{ "name": "Players who scored in multiple editions", "values": [ "Cristiano Ronaldo", "David Villa", "Neymar", "Roger Milla" ] },{ "name": "Golden Boot winners", "values": [ "James Rodríguez", "Harry Kane", "Miroslav Klose", "Mario Kempes" ] },{ "name": "Players who scored in a final", "values": [ "Mario Götze", "Andrés Iniesta", "Ferenc Puskás", "Marco Materazzi" ] }]
+}

@@ -1,0 +1,7 @@
+{
+  "title": "US States",
+  "date": "2026-05-29",
+  "dateLong": "May 29, 2026",
+  "categories": ["world"],
+  "game": [{ "name": "States Starting with A", "values": [ "Alabama", "Alaska", "Arizona", "Arkansas" ] },{ "name": "East Coast States", "values": [ "Rhode Island", "Delaware", "Virginia", "Georgia" ] },{ "name": "Most Populated States", "values": [ "California", "Texas", "Florida", "New York" ] },{ "name": "States Bordering Canada", "values": [ "Maine", "Washington", "Montana", "Vermont" ] }]
+}

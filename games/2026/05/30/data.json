@@ -1,0 +1,7 @@
+{
+  "title": "World Cup (VIII)",
+  "date": "2026-05-30",
+  "dateLong": "May 30, 2026",
+  "categories": ["sports", "soccer"],
+  "game": [{ "name": "Top Scorers from Brazil", "values": [ "Ronaldo", "Pelé", "Ademir", "Vavá" ] },{ "name": "Top Scorers from Spain", "values": [ "Villa", "Morientes", "Raúl", "Hierro" ] },{ "name": "Top Scorers from France", "values": [ "Fontaine", "Mbappé", "Henry", "Platini" ] },{ "name": "Top Scorers from Argentina", "values": [ "Messi", "Stábile", "Batistuta", "Maradona" ] }]
+}

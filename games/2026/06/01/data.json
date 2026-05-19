@@ -1,0 +1,7 @@
+{
+  "title": "Science Tools",
+  "date": "2026-06-01",
+  "dateLong": "June 01, 2026",
+  "categories": ["science"],
+  "game": [{ "name": "Devices for distance viewing", "values": [ "Telescope", "Binoculars", "Spyglass", "Monocular" ] },{ "name": "Devices to see small things", "values": [ "Microscope", "Magnifier", "Borescope", "Projector" ] },{ "name": "Safety equipment", "values": [ "Goggles", "Gloves", "Mask", "Gown" ] },{ "name": "Equipment to measure", "values": [ "Balance", "Pipette", "Flask", "Burette" ] }]
+}

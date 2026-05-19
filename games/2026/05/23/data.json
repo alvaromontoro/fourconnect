@@ -1,0 +1,7 @@
+{
+  "title": "World Cup (IV)",
+  "date": "2026-05-23",
+  "dateLong": "May 23, 2026",
+  "categories": ["sports", "soccer"],
+  "game": [{ "name": "Host countries", "values": [ "China", "Australia", "Sweden", "Canada" ] },{ "name": "Champions", "values": [ "Norway", "Japan", "Spain", "USA" ] },{ "name": "Future Hosts", "values": [ "Brazil", "England", "Jamaica", "Mexico" ] },{ "name": "Never Hosted", "values": [ "Netherlands", "Italy", "Cuba", "South Korea" ] }]
+}

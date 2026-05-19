@@ -1,0 +1,7 @@
+{
+  "title": "Animals",
+  "date": "2026-05-25",
+  "dateLong": "May 25, 2026",
+  "categories": ["animals", "nature"],
+  "game": [{ "name": "Mammals", "values": [ "Whale", "Armadillo", "Kangaroo", "Platypus" ] },{ "name": "Birds", "values": [ "Penguin", "Ostrich", "Kiwi", "Potoo" ] },{ "name": "Reptiles", "values": [ "Tuatara", "Turtle", "Crocodile", "Python" ] },{ "name": "Invertebrates", "values": [ "Crab", "Sea Slug", "Octopus", "Spider" ] }]
+}

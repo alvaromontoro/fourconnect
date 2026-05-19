@@ -1,0 +1,7 @@
+{
+  "title": "NBA",
+  "date": "2026-05-31",
+  "dateLong": "May 31, 2026",
+  "categories": ["sports", "basketball"],
+  "game": [{ "name": "Players who wore the #23", "values": [ "Michael Jordan", "LeBron James", "Anthony Davis", "Jimmy Butler" ] },{ "name": "Players who became coaches", "values": [ "Steve Kerr", "Magic Johnson", "Jason Kidd", "Chauncey Billups" ] },{ "name": "Drafted as #1", "values": [ "Greg Oden", "Hakeem Olajuwon", "Andrea Bargnani", "John Lucas" ] },{ "name": "All-Stars Without a Ring", "values": [ "Karl Malone", "Charles Barkley", "Allen Iverson", "John Stockton" ] }]
+}
