@@ -1,0 +1,24 @@
+{
+  "title": "K-Pop",
+  "date": "2026-06-04",
+  "dateLong": "June 04, 2026",
+  "categories": ["music", "art"],
+  "game": [
+  {
+    "name": "K-Pop Groups with Numbers",
+    "values": ["Seventeen", "Twice", "DAY6", "GOT7"]
+  },
+  {
+    "name": "Lightsticks",
+    "values": ["Army Bomb", "Caratbong", "Mandu-Bong", "Bl-ping-bong"]
+  },
+  {
+    "name": "Survival Show Series",
+    "values": ["Produce 101", "Queendom", "Kingdom", "I-Land"]
+  },
+  {
+    "name": "Common K-Pop Positions",
+    "values": ["Maknae", "Visual", "Center", "Leader"]
+  }
+]
+}

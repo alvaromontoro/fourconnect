@@ -1,0 +1,7 @@
+{
+  "title": "Dragon Ball",
+  "date": "2026-06-02",
+  "dateLong": "June 02, 2026",
+  "categories": ["movies", "anime"],
+  "game": [{ "name": "Earthlings", "values": [ "Bulma", "Krillin", "Chiaotzu", "Baba" ] },{ "name": "Saiyans", "values": [ "Vegetta", "Nappa", "Raditz", "Bardock" ] },{ "name": "Namekians", "values": [ "Dende", "Nail", "Piccolo", "Guru" ] },{ "name": "Glinds", "values": [ "Shin", "Kibito", "Great Kaioshin", "King Kai" ] }]
+}
