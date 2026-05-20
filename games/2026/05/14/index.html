@@ -3,7 +3,7 @@
   <head>
     <script>
       // check if current date is before game's date, if so, redirect to home page
-      const gameDate = new Date("2026-05-14T00:00:00");
+      const gameDate = new Date("2026-05-14T00:00:00+00:00");
       const today = new Date();
       if (today < gameDate) {
         window.location.href = "/";

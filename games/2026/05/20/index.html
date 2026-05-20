@@ -3,10 +3,10 @@
   <head>
     <script>
       // check if current date is before game's date, if so, redirect to home page
-      const gameDate = new Date("2026-05-20T00:00:00");
+      const gameDate = new Date("2026-05-20T00:00:00+00:00");
       const today = new Date();
       if (today < gameDate) {
-        window.location.href = "/";
+        // window.location.href = "/";
       }
     </script>
     <meta charset="utf-8">
@@ -79,7 +79,7 @@
         </div>
 
         <div class="game">
-          <four-connect data='[{ "name": "Italian Food", "values": [ "Lasagna", "Polpette", "Carpaccio", "Spaghetti" ] },{ "name": "French Food", "values": [ "Coq au Vin", "Escargot", "Quiche", "Baguette" ] },{ "name": "Spanish Food", "values": [ "Paella", "Horchata", "Gazpacho", "Croquetas" ] },{ "name": "English Food", "values": [ "Shepherd&amp;apos;s Pie", "Fish and Chips", "Eton Mess", "Toffee" ] }]'></four-connect>
+          <four-connect data='[{ "name": "Italian Food", "values": [ "Lasagna", "Polpette", "Carpaccio", "Spaghetti" ] },{ "name": "French Food", "values": [ "Coq au Vin", "Escargot", "Quiche", "Baguette" ] },{ "name": "Spanish Food", "values": [ "Paella", "Horchata", "Gazpacho", "Croquetas" ] },{ "name": "English Food", "values": [ "Shepherd&apos;s Pie", "Fish and Chips", "Eton Mess", "Toffee" ] }]'></four-connect>
         </div>
 
         <!-- <div class="ac-container">
