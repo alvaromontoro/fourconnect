@@ -1,0 +1,7 @@
+{
+  "title": "Videogames",
+  "date": "2026-06-10",
+  "dateLong": "June 10, 2026",
+  "categories": ["entertainment", "games"],
+  "game": [{ "name": "Nintendo game franchises", "values": [ "Mario", "Star Fox", "Animal Crossing", "Zelda" ] },{ "name": "Sega game franchises", "values": [ "Sonic", "Streets of Rage", "Golden Axe", "Virtua Fighter" ] },{ "name": "Atari game franchises", "values": [ "Asteroids", "Pong", "Missile Command", "Breakout" ] },{ "name": "Neo Geo game franchises", "values": [ "Art of Fighting", "Goal! Goal! Goal!", "Metal Slug", "Sengoku" ] }]
+}

@@ -1,0 +1,7 @@
+{
+  "title": "Shoes",
+  "date": "2026-06-13",
+  "dateLong": "June 13, 2026",
+  "categories": ["clothes"],
+  "game": [{ "name": "Sandals", "values": [ "Flip-flops", "Huaraches", "Slides", "Slingbacks" ] },{ "name": "Boots", "values": [ "Chukka", "Hiking", "Moc toe", "Wellington" ] },{ "name": "Formal shoes", "values": [ "Oxford", "Derby", "Monk", "Balmoral" ] },{ "name": "Dancing shoes", "values": [ "Ballet", "Tap", "Ballroom", "Lyrical" ] }]
+}

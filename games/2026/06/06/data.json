@@ -1,0 +1,7 @@
+{
+  "title": "Animated Families",
+  "date": "2026-06-06",
+  "dateLong": "June 06, 2026",
+  "categories": ["movies", "tv"],
+  "game": [{ "name": "The Simpsons", "values": [ "Homer", "Marge", "Maggie", "Lisa" ] },{ "name": "Family Guy", "values": [ "Peter", "Lois", "Brian", "Meg" ] },{ "name": "Bob&apos;s Burgers", "values": [ "Bob", "Tina", "Louise", "Linda" ] },{ "name": "Bluey", "values": [ "Bluey", "Bingo", "Chilli", "Bandit" ] }]
+}

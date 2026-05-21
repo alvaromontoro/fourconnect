@@ -1,0 +1,7 @@
+{
+  "title": "Periodic Table",
+  "date": "2026-06-11",
+  "dateLong": "June 11, 2026",
+  "categories": ["science", "world"],
+  "game": [{ "name": "Elements or US states?", "values": [ "Ga", "Sc", "Mo", "Fl" ] },{ "name": "The most noble of gases?", "values": [ "Ar", "Ne", "Kr", "Rn" ] },{ "name": "Elements or Internet domains?", "values": [ "Be", "Eu", "Se", "Br" ] },{ "name": "Elements or sizes?", "values": [ "Ti", "Md", "La", "Sm" ] }]
+}

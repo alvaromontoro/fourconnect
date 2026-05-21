@@ -18,6 +18,8 @@
 .archive .more-games ul li a.nature::before { mask-image: url("../media/leaf.svg"); }
 .archive .more-games ul li a.science::before { mask-image: url("../media/rocket.svg"); }
 .archive .more-games ul li a.movies::before { mask-image: url("../media/film-play.svg"); }
+.archive .more-games ul li a.fun::before { mask-image: url("../media/diamond.svg"); }
+.archive .more-games ul li a.clothes::before { mask-image: url("../media/shirt.svg"); }
 
 .archive.section main ul,
 .archive.section main ol {

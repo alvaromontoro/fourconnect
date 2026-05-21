@@ -1,0 +1,7 @@
+{
+  "title": "Actresses and Actors",
+  "date": "2026-06-09",
+  "dateLong": "June 09, 2026",
+  "categories": ["movies", "tv"],
+  "game": [{ "name": "Actors with last name Smith", "values": [ "Will", "Kevin", "Maggie", "Matt" ] },{ "name": "Actors with last name Jones", "values": [ "Tommy Lee", "James Earl", "Felicity", "Rashida" ] },{ "name": "Actors with last name Davis", "values": [ "Viola", "Bette", "Geena", "Warwick" ] },{ "name": "Actors with last name Miller", "values": [ "Sienna", "Wentworth", "Ezra", "Ben" ] }]
+}
