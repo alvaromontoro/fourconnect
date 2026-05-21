@@ -1,0 +1,7 @@
+{
+  "title": "Random",
+  "date": "2026-06-08",
+  "dateLong": "June 08, 2026",
+  "categories": ["fun"],
+  "game": [{ "name": "Monopoly pieces", "values": [ "Top hat", "Penguin", "Race car", "Scottish terrier" ] },{ "name": "Batman characters", "values": [ "Robin", "Poison Ivy", "Joker", "Riddler" ] },{ "name": "Magician costume", "values": [ "Wand", "Rabbit", "Cape", "Cards" ] },{ "name": "Posionous plants", "values": [ "Daffodil", "Firethorn", "Tulip", "Jimson Weed" ] }]
+}

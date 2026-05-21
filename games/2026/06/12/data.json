@@ -1,0 +1,7 @@
+{
+  "title": "Olympic Hosts",
+  "date": "2026-06-12",
+  "dateLong": "June 12, 2026",
+  "categories": ["sports"],
+  "game": [{ "name": "Cities that hosted multiple times (summer)", "values": [ "Los Angeles", "France", "London", "Tokyo" ] },{ "name": "Hosts in the US (winter and summer)", "values": [ "Atlanta", "St Louis", "Salt Lake City", "Lake Placid" ] },{ "name": "Asian hosts (winter and summer)", "values": [ "Beijing", "Seoul", "Pyeongchang", "Nagano" ] },{ "name": "Cities that hosted multiple times (winter)", "values": [ "Albertville", "Innsbruck", "St Moritz", "Cortina d&apos;Ampezzo" ] }]
+}

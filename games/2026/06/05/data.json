@@ -1,0 +1,7 @@
+{
+  "title": "Animals",
+  "date": "2026-06-05",
+  "dateLong": "June 05, 2026",
+  "categories": ["animals"],
+  "game": [{ "name": "Animals with long ears", "values": [ "Elephant", "Donkey", "Hare", "Fennec Fox" ] },{ "name": "Animals with long tails", "values": [ "Spider Monkey", "Ring-Tailed Lemur", "Quetzal", "Coati" ] },{ "name": "Animals with a long neck", "values": [ "Giraffe", "Ostrich", "Gerenuk", "Swan" ] },{ "name": "Animals with long legs", "values": [ "Flamingo", "Spider Crab", "Maned Wolf", "Daddy Longlegs" ] }]
+}

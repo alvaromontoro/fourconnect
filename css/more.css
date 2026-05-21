@@ -95,6 +95,12 @@
 .more-games ul li a.sports::before { mask-image: url("../media/bicycle.svg"); }
 .more-games ul li a.world::before { mask-image: url("../media/earth.svg"); }
 .more-games ul li a.art::before { mask-image: url("../media/picture.svg"); }
+.more-games ul li a.animals::before { mask-image: url("../media/paw.svg"); }
+.more-games ul li a.nature::before { mask-image: url("../media/leaf.svg"); }
+.more-games ul li a.science::before { mask-image: url("../media/rocket.svg"); }
+.more-games ul li a.movies::before { mask-image: url("../media/film-play.svg"); }
+.more-games ul li a.fun::before { mask-image: url("../media/diamond.svg"); }
+.more-games ul li a.clothes::before { mask-image: url("../media/shirt.svg"); }
 
 .more-games ul li:last-child a::before {
   mask-image: url("../media/plus-circle.svg");
