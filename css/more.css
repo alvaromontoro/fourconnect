@@ -1,3 +1,7 @@
+.how-to-play-index p {
+  max-width: 60ch;
+}
+
 .more-games {
   display: flex;
   flex-direction: column;
