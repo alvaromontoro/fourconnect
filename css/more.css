@@ -119,7 +119,11 @@
 }
 
 @media (min-width: 768px) {
-  .more-games ul li:nth-child(n + 5) {
+  .more-games ul li:nth-child(n + 7):not(:last-child) {
+    display: none;
+  }
+
+  .more-games ul li:nth-child(-n + 6) {
     display: list-item;
   }
 
@@ -131,16 +135,20 @@
 @media (min-width: 1300px) {
   .more-games {
     flex-direction: row;
+    gap: 4em;
   }
 
-  .more-games ul li:nth-child(n + 5) {
-    display: none;
+  .more-games ul li:nth-child(n + 7):not(:last-child) {
+    display: list-item;
   }
+
   .more-games ul li:last-child {
     display: list-item;
   }
 
   .more-games ul {
+    display: grid;
     font-size: 0.9em;
+    grid-template-columns: repeat(5, 1fr);
   }
 }

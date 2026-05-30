@@ -1,0 +1,33 @@
+.faq main details {
+  margin: 2.5em 0;
+}
+
+.faq main details summary {
+  gap: 0.25em;
+  display: flex;
+  align-items: flex-start;
+}
+
+.faq main details summary::before {
+  content: "";
+  width: 1em;
+  min-width: 1em;
+  height: 1em;
+  display: inline-block;
+  background: currentColor;
+  position: relative;
+  top: 0.6lh;
+  clip-path: polygon(0 25%, 50% 70%, 100% 25%, 100% 45%, 50% 90%, 0 45%);
+  rotate: -90deg;
+  transition: rotate 0.2s;
+}
+.faq main details[open] summary::before {
+  rotate: 0deg;
+}
+
+
+.faq main details summary h3 {
+  display: inline;
+  line-height: 1.2;
+  margin: 0;
+}
