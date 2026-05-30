@@ -5,7 +5,7 @@
 .faq main details summary {
   gap: 0.25em;
   display: flex;
-  align-items: top;
+  align-items: flex-start;
 }
 
 .faq main details summary::before {
