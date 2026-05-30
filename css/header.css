@@ -51,9 +51,10 @@ header a::before {
 
 /* Icons for header links from linearicons.com https://linearicons.com/free */
 header a[data-url="home"]::before { mask-image: url("../media/home.svg"); }
-header a[data-url="how-to-play"]::before { mask-image: url("../media/question-circle.svg"); }
+header a[data-url="how-to-play"]::before { mask-image: url("../media/map.svg"); }
 header a[data-url="archive"]::before { mask-image: url("../media/history.svg"); }
 header a[data-url="about"]::before { mask-image: url("../media/user.svg"); }
+header a[data-url="faq"]::before { mask-image: url("../media/question-circle.svg"); }
 
 
 h1 {
@@ -102,7 +103,7 @@ header nav ul {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  gap: 1em;
+  gap: 0.5em;
   list-style: none;
   margin: 0;
   padding: 0;
