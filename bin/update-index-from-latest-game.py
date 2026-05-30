@@ -27,7 +27,7 @@ def format_short_date(value: date) -> str:
     return value.strftime("%b %d").replace(" 0", " ")
 
 
-def find_latest_game_data_files(limit: int = 7) -> list[tuple[date, Path]]:
+def find_latest_game_data_files(limit: int = 10) -> list[tuple[date, Path]]:
     """Find latest N game data files, sorted by date descending, up to today."""
     games = []
     today = date.today()
@@ -55,9 +55,9 @@ def find_latest_game_data_files(limit: int = 7) -> list[tuple[date, Path]]:
 
 
 def build_previous_games_html(games_with_data: list[tuple[date, dict]]) -> str:
-    """Build previous games list (skip first/current game, take next 6)."""
+    """Build previous games list (skip first/current game, take next 9)."""
     items = []
-    for game_date, data in games_with_data[1:7]:
+    for game_date, data in games_with_data[1:10]:
         date_str = game_date.isoformat()
         display = format_short_date(game_date)
         items.append(f'            <li><a href="/games/{game_date:%Y/%m/%d}">{display}</a></li>')
@@ -186,7 +186,7 @@ def update_index_html(
 
 
 def main() -> None:
-    game_files = find_latest_game_data_files(limit=7)
+    game_files = find_latest_game_data_files(limit=10)
 
     # Load all game data
     games_with_data = []
