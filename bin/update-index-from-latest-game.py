@@ -3,7 +3,8 @@
 import html as html_utils
 import json
 import re
-from datetime import date, datetime, timedelta
+from datetime import date, datetime, timedelta, timezone
+from email.utils import format_datetime
 from pathlib import Path
 from typing import Optional
 
@@ -14,6 +15,7 @@ INDEX_FILE = ROOT / "index.html"
 ARCHIVE_FILE = ROOT / "archive.html"
 SITEMAP_XML_FILE = ROOT / "sitemap.xml"
 SITEMAP_HTML_FILE = ROOT / "sitemap.html"
+RSS_XML_FILE = ROOT / "rss.xml"
 BASE_URL = "https://fourconnect.net"
 
 STATIC_PAGES = [
@@ -131,6 +133,58 @@ def update_sitemap_xml(games_with_data: list[tuple[date, dict]]) -> bool:
     return True
 
 
+def format_rss_pub_date(value: date) -> str:
+    return format_datetime(datetime.combine(value, datetime.min.time(), tzinfo=timezone.utc))
+
+
+def update_rss_xml(games_with_data: list[tuple[date, dict]]) -> bool:
+    latest_date = games_with_data[0][0]
+    latest_pub_date = format_rss_pub_date(latest_date)
+
+    items = []
+    for game_date, data in games_with_data:
+        title = str(data.get("title", "Daily Puzzle")).strip() or "Daily Puzzle"
+        game_url = f"{BASE_URL}/games/{game_date:%Y/%m/%d}"
+        description = f"4Connect puzzle for {format_long_date(game_date)}"
+
+        categories = data.get("categories") or []
+        if categories:
+            category_text = ", ".join(str(item).strip() for item in categories if str(item).strip())
+            if category_text:
+                description += f". Categories: {category_text}."
+
+        items.append(
+            "  <item>\n"
+            f"    <title>{html_utils.escape(title)}</title>\n"
+            f"    <link>{html_utils.escape(game_url)}</link>\n"
+            f"    <guid>{html_utils.escape(game_url)}</guid>\n"
+            f"    <pubDate>{html_utils.escape(format_rss_pub_date(game_date))}</pubDate>\n"
+            f"    <description>{html_utils.escape(description)}</description>\n"
+            "  </item>"
+        )
+
+    content = (
+        "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
+        "<rss version=\"2.0\">\n"
+        "<channel>\n"
+        "  <title>4Connect</title>\n"
+        f"  <link>{BASE_URL}/</link>\n"
+        "  <description>Daily 4Connect puzzle updates.</description>\n"
+        "  <language>en-us</language>\n"
+        f"  <lastBuildDate>{html_utils.escape(latest_pub_date)}</lastBuildDate>\n"
+        + "\n".join(items)
+        + "\n</channel>\n"
+        "</rss>\n"
+    )
+
+    existing = RSS_XML_FILE.read_text(encoding="utf-8") if RSS_XML_FILE.exists() else ""
+    if existing == content:
+        return False
+
+    RSS_XML_FILE.write_text(content, encoding="utf-8")
+    return True
+
+
 def build_sitemap_html(games_with_data: list[tuple[date, dict]]) -> str:
     static_items = []
     for path, label in STATIC_PAGES:
@@ -160,6 +214,7 @@ def build_sitemap_html(games_with_data: list[tuple[date, dict]]) -> str:
         <meta property="og:image" content="https://fourconnect.net/media/thumb.png" />
         <meta property="og:description" content="Browse all FourConnect pages and daily games." />
         <link rel="monetization" href="https://fynbos.me/alvaro">
+        <link rel="alternate" type="application/rss+xml" title="4Connect RSS Feed" href="/rss.xml">
 
         <title>4Connect - Sitemap</title>
 
@@ -267,6 +322,7 @@ def build_sitemap_html(games_with_data: list[tuple[date, dict]]) -> str:
                             <ul>
                                 <li><a href="https://bsky.app/profile/fourconnect.net" target="_blank" rel="noopener noreferrer">Bluesky</a></li>
                                 <li><a href="https://www.instagram.com/4connect_game/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                                <li><a href="/rss.xml">RSS</a></li>
                             </ul>
                         </nav>
                     </details>
@@ -458,11 +514,12 @@ def main() -> None:
     archive_changed = update_archive_html(current_date, current_data, max_items=35)
     sitemap_xml_changed = update_sitemap_xml(games_with_data=published_games_with_data)
     sitemap_html_changed = update_sitemap_html(games_with_data=published_games_with_data)
+    rss_xml_changed = update_rss_xml(games_with_data=published_games_with_data)
 
-    changed = index_changed or archive_changed or sitemap_xml_changed or sitemap_html_changed
+    changed = index_changed or archive_changed or sitemap_xml_changed or sitemap_html_changed or rss_xml_changed
 
     if changed:
-        print(f"Updated {INDEX_FILE}, {ARCHIVE_FILE}, {SITEMAP_XML_FILE}, and {SITEMAP_HTML_FILE}")
+        print(f"Updated {INDEX_FILE}, {ARCHIVE_FILE}, {SITEMAP_XML_FILE}, {SITEMAP_HTML_FILE}, and {RSS_XML_FILE}")
     else:
         print("No changes needed")
 
