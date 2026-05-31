@@ -28,6 +28,18 @@ STATIC_PAGES = [
     ("/stats.html", "Stats"),
 ]
 
+STATIC_PAGE_FILES = {
+    "/": ROOT / "index.html",
+    "/archive.html": ROOT / "archive.html",
+    "/how-to-play.html": ROOT / "how-to-play.html",
+    "/faq.html": ROOT / "faq.html",
+    "/about.html": ROOT / "about.html",
+    "/contact.html": ROOT / "contact.html",
+    "/privacy.html": ROOT / "privacy.html",
+    "/terms.html": ROOT / "terms.html",
+    "/stats.html": ROOT / "stats.html",
+}
+
 
 def parse_iso_date(value: str) -> date:
     return datetime.strptime(value, "%Y-%m-%d").date()
@@ -79,12 +91,30 @@ def build_sitemap_urls(games_with_data: list[tuple[date, dict]]) -> list[str]:
 
 
 def update_sitemap_xml(games_with_data: list[tuple[date, dict]]) -> bool:
-    urls = build_sitemap_urls(games_with_data)
-
     entries = []
-    for path in urls:
+    for path, _label in STATIC_PAGES:
         location = f"{BASE_URL}{path}"
-        entries.append(f"  <url>\n    <loc>{html_utils.escape(location)}</loc>\n  </url>")
+        file_path = STATIC_PAGE_FILES.get(path)
+        if file_path and file_path.exists():
+            lastmod = date.fromtimestamp(file_path.stat().st_mtime).isoformat()
+        else:
+            lastmod = date.today().isoformat()
+        entries.append(
+            "  <url>\n"
+            f"    <loc>{html_utils.escape(location)}</loc>\n"
+            f"    <lastmod>{lastmod}</lastmod>\n"
+            "  </url>"
+        )
+
+    for game_date, _data in games_with_data:
+        path = f"/games/{game_date:%Y/%m/%d}"
+        location = f"{BASE_URL}{path}"
+        entries.append(
+            "  <url>\n"
+            f"    <loc>{html_utils.escape(location)}</loc>\n"
+            f"    <lastmod>{game_date.isoformat()}</lastmod>\n"
+            "  </url>"
+        )
 
     content = (
         "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
