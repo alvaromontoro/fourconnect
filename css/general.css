@@ -151,6 +151,10 @@ main {
   align-items: start;
 }
 
+main p {
+  line-height: 1.5;
+}
+
 /* .ac-container {
   position: relative;
   margin-block-end: 2em;
