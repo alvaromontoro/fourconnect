@@ -14,7 +14,7 @@
     justify-content: end;
   }
 
-  h1 {
+  header .site-title {
     translate: 0 100px;
   }
 
