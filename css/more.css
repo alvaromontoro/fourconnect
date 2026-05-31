@@ -13,6 +13,11 @@
   flex: 1;
 }
 
+.more-games-description {
+  margin-block-end: 1.5em;
+  text-wrap: pretty;
+}
+
 .more-games h2 {
   align-items: center;
   display: flex;
@@ -116,6 +121,14 @@
 
 .more-games ul li:last-child {
   display: list-item;
+}
+
+@media (max-width: 767px) {
+  .more-games-description {
+    line-height: 1.5;
+    margin-block-end: 1.25em;
+    text-wrap: balance;
+  }
 }
 
 @media (min-width: 768px) {

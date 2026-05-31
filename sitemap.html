@@ -1,31 +1,23 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <script>
-      // check if current date is before game's date, if so, redirect to home page
-      const gameDate = new Date("2026-05-27T00:00:00+00:00");
-      const today = new Date();
-      if (today < gameDate) {
-        window.location.href = "/";
-      }
-    </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Alvaro Montoro (alvaromontoro@gmail.com)" />
-    <meta name="keywords" content="fourconnect,4connect,game,puzzle,daily puzzle" />
-    <meta name="description" content="4Connect is a daily puzzle game where you find connections between words." />
+    <meta name="keywords" content="fourconnect,4connect,game,puzzle,daily puzzle,sitemap" />
+    <meta name="description" content="Browse all FourConnect pages and daily games." />
     <meta name="theme-color" content="#7d44db" />
-    <meta property="og:title" content="4Connect - Game" />
+    <meta property="og:title" content="4Connect" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://fourconnect.net/game.html" />
+    <meta property="og:url" content="https://fourconnect.net/sitemap.html" />
     <meta property="og:image" content="https://fourconnect.net/media/thumb.png" />
-    <meta property="og:description" content="4Connect is a daily puzzle game where you find connections between words." />
+    <meta property="og:description" content="Browse all FourConnect pages and daily games." />
     <link rel="monetization" href="https://fynbos.me/alvaro">
 
-    <title>4Connect - May 27, 2026</title>
+    <title>4Connect - Sitemap</title>
 
     <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/game.css">
+    <link rel="stylesheet" href="/css/section.css">
     <script src="/js/code.js" defer></script>
     <script src="/js/fourconnect.js" defer></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-438W7TCDDG"></script>
@@ -37,7 +29,7 @@
       gtag('config', 'G-438W7TCDDG');
     </script>
   </head>
-  <body class="game">
+  <body class="sitemap section">
     <a href="#main" class="skip-to-main">Skip to main</a>
     <header>
       <div class="container">
@@ -60,38 +52,64 @@
       </div>
     </header>
 
-    <main id="main">
-
-      <section class="hero container">
+    <main id="main" class="container">
+      <section class="hero">
         <div class="heading">
           <hgroup>
-            <p>Game</p>
-            <h2>Flowers</h2>
+            <p>Discover all pages</p>
+            <h2>Sitemap</h2>
           </hgroup>
-          <p>
-            <time datetime="2026-05-27" class="game-date pill">May 27, 2026</time>
-          </p>
-          <div class="instructions">
-            <p>16 words.</p>
-            <p>4 categories.</p>
-            <p>Find the connection.</p>
-          </div>
+          <span class="pill">Everything in one place</span>
         </div>
-
-        <div class="game">
-          <four-connect data='[{ "name": "Purple flowers", "values": [ "Lavender", "Lilac", "Blue<wbr>bonnets", "Russian Sage" ] },{ "name": "Flowers found in mountains", "values": [ "Edelweiss", "Snow Buttercup", "Alpine Phlox", "Mountain Avens" ] },{ "name": "Flowers that blossom at night", "values": [ "Moonflower", "Four O&amp;apos;Clocks", "Evening Primrose", "Gardenia" ] },{ "name": "Pink flowers with thorns", "values": [ "Rose", "Bougainvillea", "Mimosa borealis", "Japanese Quince" ] }]'></four-connect>
-        </div>
-
       </section>
 
-      <section class="game-navigation container">
-        <nav aria-label="Game navigation">
-          <a href="/games/2026/05/26" class="next-game-link">Previous Day Game</a>
-        </nav>
+      <section aria-labelledby="core-pages-title">
+        <h3 id="core-pages-title">Core Pages</h3>
+        <p><a href="/sitemap.xml">Machine-readable sitemap (XML)</a></p>
+        <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/archive.html">Archive</a></li>
+        <li><a href="/how-to-play.html">How to Play</a></li>
+        <li><a href="/faq.html">FAQ</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="/privacy.html">Privacy</a></li>
+        <li><a href="/terms.html">Terms of Use</a></li>
+        <li><a href="/stats.html">Stats</a></li>
+        </ul>
       </section>
 
+      <section aria-labelledby="daily-games-title">
+        <h3 id="daily-games-title">Daily Games</h3>
+        <ul>
+        <li><a href="/games/2026/05/31">May 31, 2026 - NBA</a></li>
+        <li><a href="/games/2026/05/30">May 30, 2026 - World Cup (VIII)</a></li>
+        <li><a href="/games/2026/05/29">May 29, 2026 - US States</a></li>
+        <li><a href="/games/2026/05/28">May 28, 2026 - World Cup (VII)</a></li>
+        <li><a href="/games/2026/05/27">May 27, 2026 - Flowers</a></li>
+        <li><a href="/games/2026/05/26">May 26, 2026 - World Cup (VI)</a></li>
+        <li><a href="/games/2026/05/25">May 25, 2026 - Animals</a></li>
+        <li><a href="/games/2026/05/24">May 24, 2026 - World Cup (V)</a></li>
+        <li><a href="/games/2026/05/23">May 23, 2026 - World Cup (IV)</a></li>
+        <li><a href="/games/2026/05/22">May 22, 2026 - Art</a></li>
+        <li><a href="/games/2026/05/21">May 21, 2026 - World Cup (III)</a></li>
+        <li><a href="/games/2026/05/20">May 20, 2026 - World Food (I)</a></li>
+        <li><a href="/games/2026/05/19">May 19, 2026 - World Cup (II)</a></li>
+        <li><a href="/games/2026/05/18">May 18, 2026 - Rock Bands</a></li>
+        <li><a href="/games/2026/05/17">May 17, 2026 - World Cup (I)</a></li>
+        <li><a href="/games/2026/05/16">May 16, 2026 - Soccer Teams</a></li>
+        <li><a href="/games/2026/05/15">May 15, 2026 - Web Dev (I)</a></li>
+        <li><a href="/games/2026/05/14">May 14, 2026 - Web Colors</a></li>
+        <li><a href="/games/2026/05/13">May 13, 2026 - World Cities</a></li>
+        <li><a href="/games/2026/05/12">May 12, 2026 - Web Dev (II)</a></li>
+        <li><a href="/games/2026/05/11">May 11, 2026 - Web Dev (III)</a></li>
+        <li><a href="/games/2026/05/10">May 10, 2026 - Web Dev (IV)</a></li>
+        <li><a href="/games/2026/05/09">May 9, 2026 - Web Dev (V)</a></li>
+        <li><a href="/games/2026/05/08">May 8, 2026 - World Cup&#x27;26</a></li>
+        </ul>
+      </section>
     </main>
-    
+
     <footer>
       <div class="container footer-content">
         <div>
@@ -113,7 +131,7 @@
               </ul>
             </nav>
           </details>
-          
+
           <details>
             <summary><h3>About Us</h3></summary>
             <nav>

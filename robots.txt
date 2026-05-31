@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Non-public utilities and source templates/data
+Disallow: /bin/
+Disallow: /categories/
+Disallow: /games/base_game.html
+Disallow: /games/*/*/*/data.json
+
+Sitemap: https://fourconnect.net/sitemap.xml
