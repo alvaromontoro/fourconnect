@@ -3,5 +3,5 @@
   "date": "2026-05-20",
   "dateLong": "May 20, 2026",
   "categories": ["food", "world"],
-  "game": [{ "name": "Italian Food", "values": [ "Lasagna", "Polpette", "Carpaccio", "Spaghetti" ] },{ "name": "French Food", "values": [ "Coq au Vin", "Escargot", "Quiche", "Baguette" ] },{ "name": "Spanish Food", "values": [ "Paella", "Horchata", "Gazpacho", "Croquetas" ] },{ "name": "English Food", "values": [ "Shepherd's Pie", "Fish and Chips", "Eton Mess", "Toffee" ] }]
+  "game": [{ "name": "Italian Food", "values": [ "Lasagna", "Polpette", "Carpaccio", "Spaghetti" ] },{ "name": "French Food", "values": [ "Coq au Vin", "Escargot", "Quiche", "Baguette" ] },{ "name": "Spanish Food", "values": [ "Paella", "Horchata", "Gazpacho", "Croquetas" ] },{ "name": "English Food", "values": [ "Shepherd&apos;s Pie", "Fish and Chips", "Eton Mess", "Toffee" ] }]
 }

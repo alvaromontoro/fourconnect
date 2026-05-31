@@ -72,6 +72,28 @@ DAY=$(echo "$GAME_DATE" | cut -d'-' -f3)
 
 # Convert date to word format (e.g., "June 16, 2025")
 DATE_LONG=$(date -j -f "%Y-%m-%d" "$GAME_DATE" "+%B %d, %Y" 2>/dev/null || date -d "$GAME_DATE" "+%B %d, %Y" 2>/dev/null)
+PAGE_TITLE="4Connect - $GAME_TITLE - $DATE_LONG"
+CANONICAL_URL="https://fourconnect.net/games/$YEAR/$MONTH/$DAY"
+
+if [ -n "$CATEGORIES_INPUT" ]; then
+  IFS=',' read -ra CATEGORY_NAMES <<< "$CATEGORIES_INPUT"
+  CLEAN_CATEGORY_NAMES=()
+  for category in "${CATEGORY_NAMES[@]}"; do
+    CATEGORY_NAME=$(echo "$category" | xargs)
+    if [ -n "$CATEGORY_NAME" ]; then
+      CLEAN_CATEGORY_NAMES+=("$CATEGORY_NAME")
+    fi
+  done
+  CATEGORY_LIST=$(IFS=', '; echo "${CLEAN_CATEGORY_NAMES[*]}")
+else
+  CATEGORY_LIST=""
+fi
+
+META_DESCRIPTION="Play the $GAME_TITLE 4Connect puzzle for $DATE_LONG."
+if [ -n "$CATEGORY_LIST" ]; then
+  META_DESCRIPTION+=" Categories: $CATEGORY_LIST."
+fi
+META_DESCRIPTION+=" Find the connections between 16 words."
 
 # Parse categories
 IFS=',' read -ra CATEGORIES <<< "$CATEGORIES_INPUT"
@@ -93,6 +115,9 @@ sed -i '' "s|\[DATE_ISO_FORMAT\]|$GAME_DATE|g" "$GAME_FOLDER/index.html"
 sed -i '' "s|\[DATE_WORD_FORMAT\]|$DATE_LONG|g" "$GAME_FOLDER/index.html"
 sed -i '' "s|\[GAME_TITLE\]|$GAME_TITLE|g" "$GAME_FOLDER/index.html"
 sed -i '' "s|\[GAME_DATA\]|$GAME_DATA|g" "$GAME_FOLDER/index.html"
+sed -i '' "s|\[PAGE_TITLE\]|$PAGE_TITLE|g" "$GAME_FOLDER/index.html"
+sed -i '' "s|\[CANONICAL_URL\]|$CANONICAL_URL|g" "$GAME_FOLDER/index.html"
+sed -i '' "s|\[META_DESCRIPTION\]|$META_DESCRIPTION|g" "$GAME_FOLDER/index.html"
 
 # Create a relative link to previous day's game (if exists)
 PREV_DAY=$(date -j -v-1d -f "%Y-%m-%d" "$GAME_DATE" "+%Y/%m/%d" 2>/dev/null || date -d "$GAME_DATE - 1 day" "+%Y/%m/%d" 2>/dev/null)
