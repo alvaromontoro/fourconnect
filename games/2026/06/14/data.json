@@ -1,0 +1,7 @@
+{
+  "title": "Languages",
+  "date": "2026-06-14",
+  "dateLong": "June 14, 2026",
+  "categories": ["world"],
+  "game": [{ "name": "Hello in different languages", "values": [ "Hola", "Konnichiwa", "Jó Napot", "Yia Sou" ] },{ "name": "Goodbye in different languages", "values": [ "Adiós", "Au Revoir", "Arrivederci", "Hade" ] },{ "name": "Thanks in different languages", "values": [ "Danke", "Asante", "Grazie", "Spasibo" ] },{ "name": "Words that mean hello and good bye", "values": [ "Shalom", "Aloha", "Ciao", "Cześć" ] }]
+}
