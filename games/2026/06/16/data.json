@@ -1,0 +1,7 @@
+{
+  "title": "Sports",
+  "date": "2026-06-16",
+  "dateLong": "June 16, 2026",
+  "categories": ["sports"],
+  "game": [{ "name": "Single Ball Sports", "values": [ "Tennis", "Golf", "Bowling", "Pool" ] },{ "name": "Team Ball Sports", "values": [ "Soccer", "Basketball", "Water Polo", "Cricket" ] },{ "name": "Water and Snow Sports", "values": [ "Diving", "Rowing", "Skiiing", "Snowboarding" ] },{ "name": "Combat Sports", "values": [ "Fencing", "Boxing", "Sumo", "Kendo" ] }]
+}
