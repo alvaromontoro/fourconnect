@@ -57,7 +57,7 @@ header a[data-url="about"]::before { mask-image: url("../media/user.svg"); }
 header a[data-url="faq"]::before { mask-image: url("../media/question-circle.svg"); }
 
 
-h1 {
+header .site-title {
   align-items: center;
   display: flex;
   font-family: Poppins, Inter, -apple-system, BlinkMacSystemFont, sans-serif;
@@ -68,12 +68,12 @@ h1 {
 }
 
 @media (min-width: 768px) {
-  h1 {
+  header .site-title {
     font-size: 2em;
   }
 }
 
-h1 img {
+header .site-title img {
   border: 0.075em solid #fff;
   border-radius: 20%;
 }
