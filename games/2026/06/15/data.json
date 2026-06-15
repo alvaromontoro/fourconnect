@@ -1,0 +1,7 @@
+{
+  "title": "Cheesy",
+  "date": "2026-06-15",
+  "dateLong": "June 15, 2026",
+  "categories": ["food", "world"],
+  "game": [{ "name": "Italian Cheeses", "values": [ "Burrata", "Mozzarella", "Pecorino", "Provolone" ] },{ "name": "English Cheeses", "values": [ "Cheddar", "Stilton", "Cheshire", "Tesyn" ] },{ "name": "Spanish Cheeses", "values": [ "Tetilla", "Cabrales", "Manchego", "Pata de mulo" ] },{ "name": "Dutch Cheeses", "values": [ "Edam", "Gouda", "Parrano", "Roomano" ] }]
+}
