@@ -1,0 +1,7 @@
+{
+  "title": "Flags",
+  "date": "2026-06-17",
+  "dateLong": "June 17, 2026",
+  "categories": ["world", "geo"],
+  "game": [{ "name": "Flags with 3 Vertical Stripes", "values": [ "Belgium", "Barbados", "France", "Ireland" ] },{ "name": "Flags with Crosses", "values": [ "Finland", "Danmark", "England", "Sweden" ] },{ "name": "Flags with Crowns", "values": [ "Spain", "Serbia", "San Marino", "Vatican City" ] },{ "name": "Flags with Weapons", "values": [ "Saudi Arabia", "Mozambique", "Angola", "Kenya" ] }]
+}

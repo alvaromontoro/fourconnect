@@ -1,23 +1,32 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <script>
+      // check if current date is before game's date, if so, redirect to home page
+      const gameDate = new Date("2026-06-17T00:00:00+00:00");
+      const today = new Date();
+      if (today < gameDate) {
+        window.location.href = "/";
+      }
+    </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Alvaro Montoro (alvaromontoro@gmail.com)" />
     <meta name="keywords" content="fourconnect,4connect,game,puzzle,daily puzzle" />
     <meta name="description" content="4Connect is a daily puzzle game where you find connections between words." />
     <meta name="theme-color" content="#7d44db" />
-    <meta property="og:title" content="4Connect" />
+    <meta property="og:title" content="4Connect - Game" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://fourconnect.net/" />
+    <meta property="og:url" content="https://fourconnect.net/game.html" />
     <meta property="og:image" content="https://fourconnect.net/media/thumb.png" />
     <meta property="og:description" content="4Connect is a daily puzzle game where you find connections between words." />
     <link rel="monetization" href="https://fynbos.me/alvaro">
     <link rel="alternate" type="application/rss+xml" title="4Connect RSS Feed" href="/rss.xml">
 
-    <title>4Connect</title>
+    <title>4Connect - June 17, 2026</title>
 
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/game.css">
     <script src="/js/code.js" defer></script>
     <script src="/js/fourconnect.js" defer></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-438W7TCDDG"></script>
@@ -29,7 +38,7 @@
       gtag('config', 'G-438W7TCDDG');
     </script>
   </head>
-  <body>
+  <body class="game">
     <a href="#main" class="skip-to-main">Skip to main</a>
     <header>
       <div class="container">
@@ -42,7 +51,7 @@
             <span class="a11y-hidden">Toggle menu</span>
           </button>
           <ul id="main-menu">
-            <li><a href="/index.html" aria-current="page" data-url="home">Home</a></li>
+            <li><a href="/index.html" data-url="home">Home</a></li>
             <li><a href="/archive.html" data-url="archive">Archive</a></li>
             <li><a href="/how-to-play.html" data-url="how-to-play">How to Play</a></li>
             <li><a href="/faq.html" data-url="faq">FAQ</a></li>
@@ -57,88 +66,29 @@
       <section class="hero container">
         <div class="heading">
           <hgroup>
-            <p>Today's game</p>
-            <h2>Daily Puzzle</h2>
+            <p>Game</p>
+            <h2>Flags</h2>
           </hgroup>
-          <div class="subtitle">
-            <p>
-              <time datetime="2026-06-14" class="game-date pill">June 14, 2026</time>
-            </p>
-            <h3 class="game-title">
-              Languages
-            </h3>
-          </div>
+          <p>
+            <time datetime="2026-06-17" class="game-date pill">June 17, 2026</time>
+          </p>
           <div class="instructions">
             <p>16 words.</p>
             <p>4 categories.</p>
             <p>Find the connection.</p>
           </div>
-          <p class="play-next" hidden>
-            <a href="/games/2026/06/13/" class="play-now-link">Play Yesterday's Game</a>
-          </p>
         </div>
 
         <div class="game">
-          <four-connect data='[{"name":"Hello in different languages","values":["Hola","Konnichiwa","J\u00f3 Napot","Yia Sou"]},{"name":"Goodbye in different languages","values":["Adi\u00f3s","Au Revoir","Arrivederci","Hade"]},{"name":"Thanks in different languages","values":["Danke","Asante","Grazie","Spasibo"]},{"name":"Words that mean hello and good bye","values":["Shalom","Aloha","Ciao","Cze\u015b\u0107"]}]'></four-connect>
+          <four-connect data='[{ "name": "Flags with 3 Vertical Stripes", "values": [ "Belgium", "Barbados", "France", "Ireland" ] },{ "name": "Flags with Crosses", "values": [ "Finland", "Danmark", "England", "Sweden" ] },{ "name": "Flags with Crowns", "values": [ "Spain", "Serbia", "San Marino", "Vatican City" ] },{ "name": "Flags with Weapons", "values": [ "Saudi Arabia", "Mozambique", "Angola", "Kenya" ] }]'></four-connect>
         </div>
 
       </section>
 
-      <section class="how-to-play how-to-play-index container">
-        <h2>How to Play</h2>
-        <p>
-          4Connect's goal is simple: find the hidden groups of four. Select four items and your guess
-          will be submitted. If the group is correct, it's locked in and removed from the board. Keep
-          grouping until all sets are found.
-        </p>
-        <p>
-          But choose carefully! The game only allows four mistakes. Can you find all four groups of
-          four words with four mistakes or fewer?
-        </p>
-        <p>Good luck!</p>
-      </section>
-
-      <section class="more-games container">
-        <section class="previous">
-          <h2 id="previous-games">
-            Previous Games
-          </h2>
-          <p class="more-games-description">
-            Missed a day? Jump into past puzzles anytime and keep your streak of smart guesses going.
-          </p>
-          <ul>
-            <li><a href="/games/2026/06/13">Jun 13</a></li>
-            <li><a href="/games/2026/06/12">Jun 12</a></li>
-            <li><a href="/games/2026/06/11">Jun 11</a></li>
-            <li><a href="/games/2026/06/10">Jun 10</a></li>
-            <li><a href="/games/2026/06/09">Jun 9</a></li>
-            <li><a href="/games/2026/06/08">Jun 8</a></li>
-            <li><a href="/games/2026/06/07">Jun 7</a></li>
-            <li><a href="/games/2026/06/06">Jun 6</a></li>
-            <li><a href="/games/2026/06/05">Jun 5</a></li>
-            <li><a href="/archive.html">View All <span class="a11y-hidden">previous games</span></a></li>
-          </ul>
-        </section>
-        <section class="by-category">
-          <h2 id="by-category-games">
-            Games by Category
-          </h2>
-          <p class="more-games-description">
-            Pick your favorite topics and play themed challenges, from tech trivia to movies and more.
-          </p>
-          <ul>
-            <li><a href="/archive.html?category=tech" class="tech">Tech</a></li>
-            <li><a href="/archive.html?category=music" class="music">Music</a></li>
-            <li><a href="/archive.html?category=food" class="food">Food</a></li>
-            <li><a href="/archive.html?category=sports" class="sports">Sports</a></li>
-            <li><a href="/archive.html?category=world" class="world">World</a></li>
-            <li><a href="/archive.html?category=art" class="art">Art</a></li>
-            <li><a href="/archive.html?category=movies" class="movies">Movies</a></li>
-            <li><a href="/archive.html?category=animals" class="animals">Animals</a></li>
-            <li><a href="/archive.html?category=nature" class="nature">Nature</a></li>
-            <li><a href="/archive.html">View All <span class="a11y-hidden">categories</span></a></li>
-          </ul>
-        </section>
+      <section class="game-navigation container">
+        <nav aria-label="Game navigation">
+          <a href="/games/2026/06/16" class="next-game-link">Previous Day Game</a>
+        </nav>
       </section>
 
     </main>
