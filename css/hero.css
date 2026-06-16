@@ -56,7 +56,7 @@ hgroup h1 {
   margin: 0;
 }
 
-h3.game-title {
+.game-title {
   font-size: 1.5em;
   font-weight: bold;
   margin-block-start: 1em;
@@ -95,7 +95,7 @@ h3.game-title {
     display: inline-block;
   }
 
-  h3.game-title {
+  .game-title {
     margin-block-start: 0;
     padding-inline-start: 0.833333em;
   }
@@ -151,7 +151,7 @@ h3.game-title {
     text-align: start;
   }
 
-  h3.game-title {
+  .game-title {
     padding-inline-start: 0;
   }
 }

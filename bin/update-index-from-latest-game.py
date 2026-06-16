@@ -441,7 +441,7 @@ def update_index_html(
     if game_title:
         escaped_title = html_utils.escape(game_title)
         updated = re.sub(
-            r'(<h3 class="game-title">\s*)(.*?)(\s*</h3>)',
+            r'(<h2 class="game-title">\s*)(.*?)(\s*</h2>)',
             lambda m: f"{m.group(1)}{escaped_title}{m.group(3)}",
             updated,
             flags=re.DOTALL,
