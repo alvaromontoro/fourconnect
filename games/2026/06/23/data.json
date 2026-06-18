@@ -1,0 +1,7 @@
+{
+  "title": "Geography",
+  "date": "2026-06-23",
+  "dateLong": "June 23, 2026",
+  "categories": ["geo", "world"],
+  "game": [{ "name": "Island countries", "values": [ "Jamaica", "Fiji", "Iceland", "Australia" ] },{ "name": "Countries that are also first names", "values": [ "Chad", "Cuba", "Jordan", "Israel" ] },{ "name": "The only countries starting with H", "values": [ "Holy See", "Hungary", "Haiti", "Honduras" ] },{ "name": "Former Yugoslavia countries", "values": [ "Serbia", "Croatia", "Slovenia", "Kosovo" ] }]
+}
