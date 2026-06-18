@@ -236,7 +236,7 @@ def build_sitemap_html(games_with_data: list[tuple[date, dict]]) -> str:
         <header>
             <div class="container">
                 <h1>
-                    <img aria-hidden alt="" src="/media/logo.webp" width="32" height="32">
+                    <img aria-hidden="true" alt="" src="/media/logo.webp" width="32" height="32">
                     4Connect
                 </h1>
                 <nav aria-label="Main navigation">
@@ -285,7 +285,7 @@ def build_sitemap_html(games_with_data: list[tuple[date, dict]]) -> str:
             <div class="container footer-content">
                 <div>
                     <h2>
-                        <img aria-hidden alt="" src="/media/logo.webp" width="24" height="24">
+                        <img aria-hidden="true" alt="" src="/media/logo.webp" width="24" height="24">
                         4Connect
                     </h2>
                     <small>&copy; 2026 <a href="https://studiokah.com">Studio Kah</a>. All rights reserved.</small>
