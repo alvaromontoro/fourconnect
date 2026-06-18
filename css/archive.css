@@ -196,6 +196,7 @@
 .calendar-date.is-available.nature::before { mask-image: url("../media/leaf.svg"); }
 .calendar-date.is-available.science::before { mask-image: url("../media/rocket.svg"); }
 .calendar-date.is-available.movies::before { mask-image: url("../media/film-play.svg"); }
+.calendar-date.is-available.entertainment::before { mask-image: url("../media/camera-video.svg"); }
 .calendar-date.is-available.fun::before { mask-image: url("../media/diamond.svg"); }
 .calendar-date.is-available.clothes::before { mask-image: url("../media/shirt.svg"); }
 
