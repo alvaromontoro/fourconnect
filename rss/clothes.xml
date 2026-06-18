@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>4Connect - Clothes</title>
+  <link>https://fourconnect.net/rss/clothes.xml</link>
+  <description>Daily 4Connect puzzle updates for Clothes.</description>
+  <language>en-us</language>
+  <lastBuildDate>Sat, 13 Jun 2026 00:00:00 +0000</lastBuildDate>
+  <item>
+    <title>Shoes</title>
+    <link>https://fourconnect.net/games/2026/06/13</link>
+    <guid>https://fourconnect.net/games/2026/06/13</guid>
+    <pubDate>Sat, 13 Jun 2026 00:00:00 +0000</pubDate>
+    <description>4Connect puzzle for June 13, 2026. Categories: clothes.</description>
+  </item>
+</channel>
+</rss>

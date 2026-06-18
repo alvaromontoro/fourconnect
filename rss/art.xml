@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>4Connect - Art</title>
+  <link>https://fourconnect.net/rss/art.xml</link>
+  <description>Daily 4Connect puzzle updates for Art.</description>
+  <language>en-us</language>
+  <lastBuildDate>Thu, 04 Jun 2026 00:00:00 +0000</lastBuildDate>
+  <item>
+    <title>K-Pop</title>
+    <link>https://fourconnect.net/games/2026/06/04</link>
+    <guid>https://fourconnect.net/games/2026/06/04</guid>
+    <pubDate>Thu, 04 Jun 2026 00:00:00 +0000</pubDate>
+    <description>4Connect puzzle for June 4, 2026. Categories: music, art.</description>
+  </item>
+  <item>
+    <title>Art</title>
+    <link>https://fourconnect.net/games/2026/05/22</link>
+    <guid>https://fourconnect.net/games/2026/05/22</guid>
+    <pubDate>Fri, 22 May 2026 00:00:00 +0000</pubDate>
+    <description>4Connect puzzle for May 22, 2026. Categories: art.</description>
+  </item>
+  <item>
+    <title>Rock Bands</title>
+    <link>https://fourconnect.net/games/2026/05/18</link>
+    <guid>https://fourconnect.net/games/2026/05/18</guid>
+    <pubDate>Mon, 18 May 2026 00:00:00 +0000</pubDate>
+    <description>4Connect puzzle for May 18, 2026. Categories: music, culture, art.</description>
+  </item>
+</channel>
+</rss>

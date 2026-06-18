@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>4Connect - World</title>
+  <link>https://fourconnect.net/rss/world.xml</link>
+  <description>Daily 4Connect puzzle updates for World.</description>
+  <language>en-us</language>
+  <lastBuildDate>Wed, 17 Jun 2026 00:00:00 +0000</lastBuildDate>
+  <item>
+    <title>Flags</title>
+    <link>https://fourconnect.net/games/2026/06/17</link>
+    <guid>https://fourconnect.net/games/2026/06/17</guid>
+    <pubDate>Wed, 17 Jun 2026 00:00:00 +0000</pubDate>
+    <description>4Connect puzzle for June 17, 2026. Categories: world, geo.</description>
+  </item>
+  <item>
+    <title>Cheesy</title>
+    <link>https://fourconnect.net/games/2026/06/15</link>
+    <guid>https://fourconnect.net/games/2026/06/15</guid>
+    <pubDate>Mon, 15 Jun 2026 00:00:00 +0000</pubDate>
+    <description>4Connect puzzle for June 15, 2026. Categories: food, world.</description>
+  </item>
+  <item>
+    <title>Languages</title>
+    <link>https://fourconnect.net/games/2026/06/14</link>
+    <guid>https://fourconnect.net/games/2026/06/14</guid>
+    <pubDate>Sun, 14 Jun 2026 00:00:00 +0000</pubDate>
+    <description>4Connect puzzle for June 14, 2026. Categories: world.</description>
+  </item>
+  <item>
+    <title>Periodic Table</title>
+    <link>https://fourconnect.net/games/2026/06/11</link>
+    <guid>https://fourconnect.net/games/2026/06/11</guid>
+    <pubDate>Thu, 11 Jun 2026 00:00:00 +0000</pubDate>
+    <description>4Connect puzzle for June 11, 2026. Categories: science, world.</description>
+  </item>
+  <item>
+    <title>US States</title>
+    <link>https://fourconnect.net/games/2026/05/29</link>
+    <guid>https://fourconnect.net/games/2026/05/29</guid>
+    <pubDate>Fri, 29 May 2026 00:00:00 +0000</pubDate>
+    <description>4Connect puzzle for May 29, 2026. Categories: world.</description>
+  </item>
+  <item>
+    <title>World Food (I)</title>
+    <link>https://fourconnect.net/games/2026/05/20</link>
+    <guid>https://fourconnect.net/games/2026/05/20</guid>
+    <pubDate>Wed, 20 May 2026 00:00:00 +0000</pubDate>
+    <description>4Connect puzzle for May 20, 2026. Categories: food, world.</description>
+  </item>
+  <item>
+    <title>World Cities</title>
+    <link>https://fourconnect.net/games/2026/05/13</link>
+    <guid>https://fourconnect.net/games/2026/05/13</guid>
+    <pubDate>Wed, 13 May 2026 00:00:00 +0000</pubDate>
+    <description>4Connect puzzle for May 13, 2026. Categories: world, geo.</description>
+  </item>
+</channel>
+</rss>

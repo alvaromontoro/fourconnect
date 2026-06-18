@@ -179,6 +179,9 @@ PYTHON
   fi
 done
 
+# Refresh RSS feeds after category files change
+python3 "$PROJECT_ROOT/bin/update-index-from-latest-game.py" --rss-only
+
 echo -e "\n${GREEN}=== Game successfully created! ===${NC}"
 echo -e "Location: ${BLUE}$GAME_FOLDER${NC}"
 echo -e "URL: ${BLUE}/games/$YEAR/$MONTH/$DAY/${NC}"
