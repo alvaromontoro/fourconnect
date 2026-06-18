@@ -2,6 +2,6 @@
   "title": "Colors and More",
   "date": "2026-06-27",
   "dateLong": "June 27, 2026",
-  "categories": ["colors", "fun", "random"],
+  "categories": ["colors", "fun"],
   "game": [{ "name": "Words that mean to turn red", "values": [ "Flush", "Redden", "Glow", "Wash" ] },{ "name": "Colors of Olympic rings", "values": [ "Black", "Blue", "Green", "Yellow" ] },{ "name": "Words after &apos;Blood&apos;", "values": [ "Line", "Orange", "Moon", "Vessel" ] },{ "name": "Words before &apos;Blue&apos;", "values": [ "Baby", "Navy", "Royal", "Sky" ] }]
 }

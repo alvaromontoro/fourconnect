@@ -2,6 +2,6 @@
   "title": "Random",
   "date": "2026-06-19",
   "dateLong": "June 19, 2026",
-  "categories": ["random"],
+  "categories": ["fun"],
   "game": [{ "name": "Card Suits", "values": [ "Spade", "Diamond", "Heart", "Club" ] },{ "name": "Famous Davids", "values": [ "Hasselhoff", "Attenborough", "Bowie", "Duchovny" ] },{ "name": "Batman Villains", "values": [ "Penguin", "Joker", "Riddler", "Bane" ] },{ "name": "Associated with Red", "values": [ "Cardinal", "Robin", "Baron", "Strawberry" ] }]
 }
