@@ -1,0 +1,7 @@
+{
+  "title": "Fruits and More",
+  "date": "2026-06-18",
+  "dateLong": "June 18, 2026",
+  "categories": ["food"],
+  "game": [{ "name": "Fruits", "values": [ "Apricot", "Durian", "Rambutan", "Cantaloupe" ] },{ "name": "Clothing Brands", "values": [ "Mango", "Papaya", "Fruit of the Loom", "Mavi" ] },{ "name": "Communication Companies", "values": [ "Orange", "Vodafone", "Movistar", "Verizon" ] },{ "name": "Phone Brands", "values": [ "Apple", "Blackberry", "Motorola", "Nokia" ] }]
+}
