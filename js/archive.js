@@ -102,7 +102,7 @@ if (moreGames) {
         <h2 class="calendar-title"></h2>
         <button type="button" class="calendar-nav calendar-next" aria-label="Show next month"></button>
       </div>
-      <div class="calendar" role="application" aria-label="Puzzle archive calendar">
+      <div class="calendar" aria-label="Puzzle archive calendar">
         <div class="calendar-days calendar-grid"></div>
         <div class="calendar-dates calendar-grid"></div>
       </div>
