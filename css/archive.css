@@ -74,6 +74,10 @@
   margin-bottom: 3em;
 }
 
+.calendar-header h2 {
+  text-align: center;
+}
+
 .calendar-header h2::before {
   content: none;
 }
@@ -86,6 +90,7 @@
   height: 2em;
   border-radius: 0.5em;
   cursor: pointer;
+  filter: drop-shadow(1px 0) drop-shadow(1px 0);
 }
 
 .calendar-header button::after {
@@ -105,6 +110,10 @@
   background: var(--accent);
 }
 
+
+.calendar-header button[disabled]::after {
+  background: currentcolor;
+}
 .calendar-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
