@@ -435,7 +435,13 @@ def build_archive_item_html(game_date: date, game_data: dict) -> str:
     return f'          <li><a href="{href}"{class_attr}><time datetime="{date_str}">{display}</time></a></li>'
 
 
-def update_archive_html(current_date: date, current_data: dict, max_items: int = 35) -> bool:
+def update_archive_html(
+    current_date: date,
+    current_data: dict,
+    max_items: int = 35,
+    available_game_dates: Optional[list[date]] = None,
+    date_themes: Optional[dict[date, str]] = None,
+) -> bool:
     html = ARCHIVE_FILE.read_text(encoding="utf-8")
 
     section_match = re.search(
@@ -466,6 +472,53 @@ def update_archive_html(current_date: date, current_data: dict, max_items: int =
 
     new_section = section_match.group(1) + "\n" + "\n".join(updated_items) + "\n        " + section_match.group(3)
     updated = html[:section_match.start()] + new_section + html[section_match.end():]
+
+    if available_game_dates:
+        available_dates = sorted({game_date.isoformat() for game_date in available_game_dates})
+    else:
+        available_dates = []
+        for item in updated_items:
+            match = re.search(r'datetime="([^"]+)"', item)
+            if match:
+                available_dates.append(match.group(1))
+        available_dates = sorted(set(available_dates))
+
+    if date_themes is None:
+        date_themes = {}
+
+    if available_dates:
+        payload = {
+            "minDate": available_dates[0],
+            "maxDate": available_dates[-1],
+            "availableDates": available_dates,
+            "dateThemes": {
+                game_date.isoformat(): theme
+                for game_date, theme in sorted(date_themes.items(), key=lambda item: item[0])
+                if theme
+            },
+        }
+        data_island = (
+            '      <script id="archive-data" type="application/json">'
+            + json.dumps(payload, separators=(",", ":"))
+            + "</script>"
+        )
+
+        if re.search(r'<script id="archive-data" type="application/json">.*?</script>', updated, flags=re.DOTALL):
+            updated = re.sub(
+                r'<script id="archive-data" type="application/json">.*?</script>',
+                data_island,
+                updated,
+                count=1,
+                flags=re.DOTALL,
+            )
+        else:
+            updated = re.sub(
+                r'(<section class="more-games">.*?</section>)',
+                r"\1\n\n" + data_island,
+                updated,
+                count=1,
+                flags=re.DOTALL,
+            )
 
     if updated == html:
         return False
@@ -578,7 +631,17 @@ def main() -> None:
         previous_games_html,
     )
 
-    archive_changed = update_archive_html(current_date, current_data, max_items=35)
+    archive_changed = update_archive_html(
+        current_date,
+        current_data,
+        max_items=35,
+        available_game_dates=[game_date for game_date, _data in published_games_with_data],
+        date_themes={
+            game_date: normalize_css_class(str((game_data.get("categories") or [""])[0]))
+            for game_date, game_data in published_games_with_data
+            if (game_data.get("categories") or [""])[0]
+        },
+    )
     sitemap_xml_changed = update_sitemap_xml(games_with_data=published_games_with_data)
     sitemap_html_changed = update_sitemap_html(games_with_data=published_games_with_data)
     rss_xml_changed = update_all_rss_files(games_with_data=published_games_with_data)

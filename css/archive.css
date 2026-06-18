@@ -59,3 +59,152 @@
     grid-template-columns: repeat(7, 1fr);
   }
 }
+
+/******* CALENDAR **********/
+.calendar-container {
+  max-width: 800px;
+  margin: auto auto;
+  margin-block-end: 3em;
+}
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3em;
+
+  h2::before {
+    content: none;
+  }
+
+  button {
+    background: none;
+    border: 0;
+    position: relative;
+    width: 2em;
+    height: 2em;
+    border-radius: 0.5em;
+    cursor: pointer;
+
+    &::after {
+      background: currentcolor;
+      content: "";
+      height: 1.5em;
+      inset-inline-end: 0;
+      mask-image: url(../media/chevron-right.svg);
+      mask-size: contain;
+      position: absolute;
+      top: 50%;
+      translate: 0 -50%;
+      width: 1.5em;
+    }
+
+    &:hover::after {
+      background: var(--accent);
+    }
+  }
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.25em;
+}
+
+.calendar-days {
+  margin-block-end: 1.5em;
+}
+
+.calendar-days div {
+  text-align: center;
+  font-size: 0.75em;
+  font-weight: 700;
+}
+
+.calendar-dates {
+  font-size: clamp(12px, 1.75vmin, 20px);
+  gap: 0.5em;
+
+  @media (min-width: 768px) {
+    gap: 0.75em;
+  }
+
+  @media (min-width: 1300px) {
+    gap: 0.8em;
+  }
+}
+
+.calendar-date {
+  align-items: center;
+  aspect-ratio: 1;
+  border: 2px solid;
+  border-radius: 0.5em;
+  gap: 0.35em;
+  display: flex;
+  justify-content: center;
+  min-height: 2.75em;
+}
+
+.calendar-date.is-available {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  font-size: 1.125em;
+  gap: 0.25em;
+  height: 100%;
+  inset: 0;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+
+  @media (min-width: 1300px) {
+    font-size: 1.25em;
+  }
+}
+
+.calendar-date.is-available::before {
+  background: currentColor;
+  content: "";
+  display: inline-block;
+  height: 2em;
+  mask-image: url("../media/calendar-full.svg");
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  width: 2em;
+}
+
+.calendar-date.is-available.tech::before { mask-image: url("../media/laptop.svg"); }
+.calendar-date.is-available.music::before { mask-image: url("../media/music-note.svg"); }
+.calendar-date.is-available.food::before { mask-image: url("../media/dinner.svg"); }
+.calendar-date.is-available.sports::before { mask-image: url("../media/bicycle.svg"); }
+.calendar-date.is-available.world::before { mask-image: url("../media/earth.svg"); }
+.calendar-date.is-available.art::before { mask-image: url("../media/picture.svg"); }
+.calendar-date.is-available.animals::before { mask-image: url("../media/paw.svg"); }
+.calendar-date.is-available.nature::before { mask-image: url("../media/leaf.svg"); }
+.calendar-date.is-available.science::before { mask-image: url("../media/rocket.svg"); }
+.calendar-date.is-available.movies::before { mask-image: url("../media/film-play.svg"); }
+.calendar-date.is-available.fun::before { mask-image: url("../media/diamond.svg"); }
+.calendar-date.is-available.clothes::before { mask-image: url("../media/shirt.svg"); }
+
+.calendar-date.is-available:hover,
+.calendar-date.is-available:focus-visible {
+  color: var(--accent);
+  outline: none;
+}
+
+.calendar-date.is-unavailable {
+  color: var(--accent);
+  opacity: 0.3;
+}
+
+.calendar-date.is-empty {
+  border: 0;
+}
+
+.calendar-nav[disabled] {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
