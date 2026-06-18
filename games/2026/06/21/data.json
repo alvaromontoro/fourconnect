@@ -1,0 +1,7 @@
+{
+  "title": "Actors",
+  "date": "2026-06-21",
+  "dateLong": "June 21, 2026",
+  "categories": ["movies", "entertainment"],
+  "game": [{ "name": "Famous Johns", "values": [ "Travolta", "Wayne", "Reilly", "Goodman" ] },{ "name": "Famous Michaels", "values": [ "Sheen", "Keaton", "Caine", "Douglas" ] },{ "name": "Famous Charles", "values": [ "Bronson", "Chaplin", "Laughton", "Day" ] },{ "name": "Famous Edwards", "values": [ "Norton", "Harris", "Murphy", "Izzard" ] }]
+}

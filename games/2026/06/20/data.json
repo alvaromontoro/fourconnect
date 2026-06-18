@@ -1,0 +1,7 @@
+{
+  "title": "Animals",
+  "date": "2026-06-20",
+  "dateLong": "June 20, 2026",
+  "categories": ["animals", "nature"],
+  "game": [{ "name": "Groups of animals", "values": [ "Pack", "Pride", "Colony", "Flock" ] },{ "name": "Words before fish", "values": [ "Cat", "Sun", "Jelly", "Star" ] },{ "name": "Animal idioms meaning to hide or avoid", "values": [ "Weasel", "Duck", "Worm", "Clam" ] },{ "name": "Words containing animal sounds at the start", "values": [ "Purse", "Crowd", "Barque", "Howler" ] }]
+}

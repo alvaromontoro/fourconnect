@@ -1,0 +1,7 @@
+{
+  "title": "Geography",
+  "date": "2026-06-24",
+  "dateLong": "June 24, 2026",
+  "categories": ["geo", "world", "nature"],
+  "game": [{ "name": "Oceans", "values": [ "Atlantic", "Indian", "Arctic", "Southern" ] },{ "name": "Rivers", "values": [ "Amazon", "Nile", "Yangtze", "Ganges" ] },{ "name": "Seas", "values": [ "Mediterranean", "Coral", "Arabian", "Tasman Sea" ] },{ "name": "Lakes", "values": [ "Caspian Sea", "Dead Sea", "Titicaca", "Superior" ] }]
+}

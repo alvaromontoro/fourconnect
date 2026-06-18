@@ -1,0 +1,7 @@
+{
+  "title": "Actresses",
+  "date": "2026-06-22",
+  "dateLong": "June 22, 2026",
+  "categories": ["movies", "entertainment"],
+  "game": [{ "name": "Famous 'Annas'", "values": [ "Faris", "Kendrick", "Hathaway", "De Armas" ] },{ "name": "Famous Emmas", "values": [ "Stone", "Watson", "Thompson", "Roberts" ] },{ "name": "Famous 'Kats'", "values": [ "Hepburn", "O'Hara", "Deneuve", "Winslet" ] },{ "name": "Famous Marys", "values": [ "Pickford", "Astor", "Tyler Moore", "Parker" ] }]
+}
