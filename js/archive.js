@@ -147,7 +147,7 @@ if (moreGames) {
 
         if (availableDateSet.has(isoDate)) {
           const pathDate = isoDate.replace(/-/g, "/");
-          const themeClass = typeof dataIslandThemes[isoDate] === "string" ? dataIslandThemes[isoDate] : "";
+          const themeClass = typeof dataIslandThemes[isoDate] === "string" ? dataIslandThemes[isoDate].trim().toLowerCase().replace(/[^a-z0-9_-]+/g, "-").replace(/^-+|-+$/g, "") : "";
           const themeClassName = themeClass ? ` ${themeClass}` : "";
           cells.push(
             `<a class="calendar-date is-available${themeClassName}" href="/games/${pathDate}" aria-label="Play puzzle for ${isoDate}">${day}</a>`
