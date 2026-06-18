@@ -66,42 +66,43 @@
   margin: auto auto;
   margin-block-end: 3em;
 }
+
 .calendar-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 3em;
+}
 
-  h2::before {
-    content: none;
-  }
+.calendar-header h2::before {
+  content: none;
+}
 
-  button {
-    background: none;
-    border: 0;
-    position: relative;
-    width: 2em;
-    height: 2em;
-    border-radius: 0.5em;
-    cursor: pointer;
+.calendar-header button {
+  background: none;
+  border: 0;
+  position: relative;
+  width: 2em;
+  height: 2em;
+  border-radius: 0.5em;
+  cursor: pointer;
+}
 
-    &::after {
-      background: currentcolor;
-      content: "";
-      height: 1.5em;
-      inset-inline-end: 0;
-      mask-image: url(../media/chevron-right.svg);
-      mask-size: contain;
-      position: absolute;
-      top: 50%;
-      translate: 0 -50%;
-      width: 1.5em;
-    }
+.calendar-header button::after {
+  background: currentcolor;
+  content: "";
+  height: 1.5em;
+  inset-inline-end: 0;
+  mask-image: url(../media/chevron-right.svg);
+  mask-size: contain;
+  position: absolute;
+  top: 50%;
+  translate: 0 -50%;
+  width: 1.5em;
+}
 
-    &:hover::after {
-      background: var(--accent);
-    }
-  }
+.calendar-header button:hover::after {
+  background: var(--accent);
 }
 
 .calendar-grid {
@@ -123,13 +124,11 @@
 .calendar-dates {
   font-size: clamp(12px, 1.75vmin, 20px);
   gap: 0.5em;
+}
 
-  @media (min-width: 768px) {
+@media (min-width: 768px) {
+  .calendar-dates {
     gap: 0.75em;
-  }
-
-  @media (min-width: 1300px) {
-    gap: 0.8em;
   }
 }
 
@@ -158,8 +157,10 @@
   text-align: center;
   text-decoration: none;
   width: 100%;
+}
 
-  @media (min-width: 1300px) {
+@media (min-width: 1300px) {
+  .calendar-date.is-available {
     font-size: 1.25em;
   }
 }
