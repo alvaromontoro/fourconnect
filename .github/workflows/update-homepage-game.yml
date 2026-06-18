@@ -31,7 +31,7 @@ jobs:
 
       - name: Commit and push if changed
         run: |
-          if git diff --quiet -- index.html archive.html sitemap.xml sitemap.html rss.xml rss; then
+          if [ -z "$(git status --porcelain --untracked-files=normal -- index.html archive.html sitemap.xml sitemap.html rss.xml rss)" ]; then
             echo "No homepage, archive, sitemap, or RSS changes"
             exit 0
           fi
