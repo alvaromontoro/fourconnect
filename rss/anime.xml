@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>4Connect - Anime</title>
+  <link>https://fourconnect.net/rss/anime.xml</link>
+  <description>Daily 4Connect puzzle updates for Anime.</description>
+  <language>en-us</language>
+  <lastBuildDate>Tue, 02 Jun 2026 00:00:00 +0000</lastBuildDate>
+  <item>
+    <title>Dragon Ball</title>
+    <link>https://fourconnect.net/games/2026/06/02</link>
+    <guid>https://fourconnect.net/games/2026/06/02</guid>
+    <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
+    <description>4Connect puzzle for June 2, 2026. Categories: movies, anime.</description>
+  </item>
+</channel>
+</rss>

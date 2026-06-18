@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 
+import argparse
 import html as html_utils
 import json
 import re
+from collections import defaultdict
 from datetime import date, datetime, timedelta, timezone
 from email.utils import format_datetime
 from pathlib import Path
@@ -16,6 +18,7 @@ ARCHIVE_FILE = ROOT / "archive.html"
 SITEMAP_XML_FILE = ROOT / "sitemap.xml"
 SITEMAP_HTML_FILE = ROOT / "sitemap.html"
 RSS_XML_FILE = ROOT / "rss.xml"
+RSS_DIR = ROOT / "rss"
 BASE_URL = "https://fourconnect.net"
 
 STATIC_PAGES = [
@@ -55,6 +58,10 @@ def format_long_date(value: date) -> str:
 def format_short_date(value: date) -> str:
     """Format date as 'Mon DD' (e.g., 'May 11')."""
     return value.strftime("%b %d").replace(" 0", " ")
+
+
+def format_category_label(value: str) -> str:
+    return re.sub(r"[\s_-]+", " ", value.strip()).title()
 
 
 def find_latest_game_data_files(limit: Optional[int] = 10, include_future: bool = False) -> list[tuple[date, Path]]:
@@ -137,10 +144,7 @@ def format_rss_pub_date(value: date) -> str:
     return format_datetime(datetime.combine(value, datetime.min.time(), tzinfo=timezone.utc))
 
 
-def update_rss_xml(games_with_data: list[tuple[date, dict]]) -> bool:
-    latest_date = games_with_data[0][0]
-    latest_pub_date = format_rss_pub_date(latest_date)
-
+def build_rss_items(games_with_data: list[tuple[date, dict]]) -> list[str]:
     items = []
     for game_date, data in games_with_data:
         title = str(data.get("title", "Daily Puzzle")).strip() or "Daily Puzzle"
@@ -163,13 +167,18 @@ def update_rss_xml(games_with_data: list[tuple[date, dict]]) -> bool:
             "  </item>"
         )
 
-    content = (
+    return items
+
+
+def build_rss_content(title: str, link: str, description: str, items: list[str], latest_date: date) -> str:
+    latest_pub_date = format_rss_pub_date(latest_date)
+    return (
         "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
         "<rss version=\"2.0\">\n"
         "<channel>\n"
-        "  <title>4Connect</title>\n"
-        f"  <link>{BASE_URL}/</link>\n"
-        "  <description>Daily 4Connect puzzle updates.</description>\n"
+        f"  <title>{html_utils.escape(title)}</title>\n"
+        f"  <link>{html_utils.escape(link)}</link>\n"
+        f"  <description>{html_utils.escape(description)}</description>\n"
         "  <language>en-us</language>\n"
         f"  <lastBuildDate>{html_utils.escape(latest_pub_date)}</lastBuildDate>\n"
         + "\n".join(items)
@@ -177,12 +186,58 @@ def update_rss_xml(games_with_data: list[tuple[date, dict]]) -> bool:
         "</rss>\n"
     )
 
-    existing = RSS_XML_FILE.read_text(encoding="utf-8") if RSS_XML_FILE.exists() else ""
+
+def update_rss_file(file_path: Path, title: str, link: str, description: str, games_with_data: list[tuple[date, dict]]) -> bool:
+    items = build_rss_items(games_with_data)
+    latest_date = games_with_data[0][0] if games_with_data else date.today()
+    content = build_rss_content(title, link, description, items, latest_date)
+
+    existing = file_path.read_text(encoding="utf-8") if file_path.exists() else ""
     if existing == content:
         return False
 
-    RSS_XML_FILE.write_text(content, encoding="utf-8")
+    file_path.parent.mkdir(parents=True, exist_ok=True)
+    file_path.write_text(content, encoding="utf-8")
     return True
+
+
+def update_rss_xml(games_with_data: list[tuple[date, dict]]) -> bool:
+    return update_rss_file(
+        RSS_XML_FILE,
+        title="4Connect",
+        link=f"{BASE_URL}/",
+        description="Daily 4Connect puzzle updates.",
+        games_with_data=games_with_data,
+    )
+
+
+def update_category_rss_xml(games_with_data: list[tuple[date, dict]]) -> bool:
+    category_games = defaultdict(list)
+    for game_date, data in games_with_data:
+        for category in data.get("categories") or []:
+            category_slug = str(category).strip()
+            if category_slug:
+                category_games[category_slug].append((game_date, data))
+
+    changed = False
+    for category_file in sorted((ROOT / "categories").glob("*.json")):
+        category_slug = category_file.stem
+        category_label = format_category_label(category_slug)
+        changed |= update_rss_file(
+            RSS_DIR / f"{category_slug}.xml",
+            title=f"4Connect - {category_label}",
+            link=f"{BASE_URL}/rss/{category_slug}.xml",
+            description=f"Daily 4Connect puzzle updates for {category_label}.",
+            games_with_data=category_games.get(category_slug, []),
+        )
+
+    return changed
+
+
+def update_all_rss_files(games_with_data: list[tuple[date, dict]]) -> bool:
+    rss_xml_changed = update_rss_xml(games_with_data)
+    category_rss_changed = update_category_rss_xml(games_with_data)
+    return rss_xml_changed or category_rss_changed
 
 
 def build_sitemap_html(games_with_data: list[tuple[date, dict]]) -> str:
@@ -481,12 +536,24 @@ def update_index_html(
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--rss-only", action="store_true", help="Only update RSS feeds")
+    args = parser.parse_args()
+
     published_game_files = find_latest_game_data_files(limit=None)
 
     published_games_with_data = []
     for game_date, data_file in published_game_files:
         data = json.loads(data_file.read_text(encoding="utf-8"))
         published_games_with_data.append((game_date, data))
+
+    if args.rss_only:
+        rss_changed = update_all_rss_files(published_games_with_data)
+        if rss_changed:
+            print(f"Updated {RSS_XML_FILE} and category feeds in {RSS_DIR}")
+        else:
+            print("No RSS changes needed")
+        return
 
     games_with_data = published_games_with_data[:10]
 
@@ -514,12 +581,12 @@ def main() -> None:
     archive_changed = update_archive_html(current_date, current_data, max_items=35)
     sitemap_xml_changed = update_sitemap_xml(games_with_data=published_games_with_data)
     sitemap_html_changed = update_sitemap_html(games_with_data=published_games_with_data)
-    rss_xml_changed = update_rss_xml(games_with_data=published_games_with_data)
+    rss_xml_changed = update_all_rss_files(games_with_data=published_games_with_data)
 
     changed = index_changed or archive_changed or sitemap_xml_changed or sitemap_html_changed or rss_xml_changed
 
     if changed:
-        print(f"Updated {INDEX_FILE}, {ARCHIVE_FILE}, {SITEMAP_XML_FILE}, {SITEMAP_HTML_FILE}, and {RSS_XML_FILE}")
+        print(f"Updated {INDEX_FILE}, {ARCHIVE_FILE}, {SITEMAP_XML_FILE}, {SITEMAP_HTML_FILE}, {RSS_XML_FILE}, and {RSS_DIR}")
     else:
         print("No changes needed")
 

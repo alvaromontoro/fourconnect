@@ -31,13 +31,13 @@ jobs:
 
       - name: Commit and push if changed
         run: |
-          if git diff --quiet -- index.html archive.html sitemap.xml sitemap.html; then
-            echo "No homepage, archive, or sitemap changes"
+          if git diff --quiet -- index.html archive.html sitemap.xml sitemap.html rss.xml rss; then
+            echo "No homepage, archive, sitemap, or RSS changes"
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.html archive.html sitemap.xml sitemap.html
-          git commit -m "chore: update homepage, archive, and sitemaps"
+          git add index.html archive.html sitemap.xml sitemap.html rss.xml rss
+          git commit -m "chore: update homepage, archive, sitemaps, and rss"
           git push

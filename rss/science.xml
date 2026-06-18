@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>4Connect - Science</title>
+  <link>https://fourconnect.net/rss/science.xml</link>
+  <description>Daily 4Connect puzzle updates for Science.</description>
+  <language>en-us</language>
+  <lastBuildDate>Thu, 11 Jun 2026 00:00:00 +0000</lastBuildDate>
+  <item>
+    <title>Periodic Table</title>
+    <link>https://fourconnect.net/games/2026/06/11</link>
+    <guid>https://fourconnect.net/games/2026/06/11</guid>
+    <pubDate>Thu, 11 Jun 2026 00:00:00 +0000</pubDate>
+    <description>4Connect puzzle for June 11, 2026. Categories: science, world.</description>
+  </item>
+  <item>
+    <title>Science Tools</title>
+    <link>https://fourconnect.net/games/2026/06/01</link>
+    <guid>https://fourconnect.net/games/2026/06/01</guid>
+    <pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>
+    <description>4Connect puzzle for June 1, 2026. Categories: science.</description>
+  </item>
+</channel>
+</rss>

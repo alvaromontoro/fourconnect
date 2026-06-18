@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>4Connect - Tv</title>
+  <link>https://fourconnect.net/rss/tv.xml</link>
+  <description>Daily 4Connect puzzle updates for Tv.</description>
+  <language>en-us</language>
+  <lastBuildDate>Tue, 09 Jun 2026 00:00:00 +0000</lastBuildDate>
+  <item>
+    <title>Actresses and Actors</title>
+    <link>https://fourconnect.net/games/2026/06/09</link>
+    <guid>https://fourconnect.net/games/2026/06/09</guid>
+    <pubDate>Tue, 09 Jun 2026 00:00:00 +0000</pubDate>
+    <description>4Connect puzzle for June 9, 2026. Categories: movies, tv.</description>
+  </item>
+  <item>
+    <title>Animated Families</title>
+    <link>https://fourconnect.net/games/2026/06/06</link>
+    <guid>https://fourconnect.net/games/2026/06/06</guid>
+    <pubDate>Sat, 06 Jun 2026 00:00:00 +0000</pubDate>
+    <description>4Connect puzzle for June 6, 2026. Categories: movies, tv.</description>
+  </item>
+</channel>
+</rss>

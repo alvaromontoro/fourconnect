@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>4Connect - Basketball</title>
+  <link>https://fourconnect.net/rss/basketball.xml</link>
+  <description>Daily 4Connect puzzle updates for Basketball.</description>
+  <language>en-us</language>
+  <lastBuildDate>Sun, 31 May 2026 00:00:00 +0000</lastBuildDate>
+  <item>
+    <title>NBA</title>
+    <link>https://fourconnect.net/games/2026/05/31</link>
+    <guid>https://fourconnect.net/games/2026/05/31</guid>
+    <pubDate>Sun, 31 May 2026 00:00:00 +0000</pubDate>
+    <description>4Connect puzzle for May 31, 2026. Categories: sports, basketball.</description>
+  </item>
+</channel>
+</rss>

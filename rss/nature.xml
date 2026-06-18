@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>4Connect - Nature</title>
+  <link>https://fourconnect.net/rss/nature.xml</link>
+  <description>Daily 4Connect puzzle updates for Nature.</description>
+  <language>en-us</language>
+  <lastBuildDate>Wed, 27 May 2026 00:00:00 +0000</lastBuildDate>
+  <item>
+    <title>Flowers</title>
+    <link>https://fourconnect.net/games/2026/05/27</link>
+    <guid>https://fourconnect.net/games/2026/05/27</guid>
+    <pubDate>Wed, 27 May 2026 00:00:00 +0000</pubDate>
+    <description>4Connect puzzle for May 27, 2026. Categories: nature.</description>
+  </item>
+  <item>
+    <title>Animals</title>
+    <link>https://fourconnect.net/games/2026/05/25</link>
+    <guid>https://fourconnect.net/games/2026/05/25</guid>
+    <pubDate>Mon, 25 May 2026 00:00:00 +0000</pubDate>
+    <description>4Connect puzzle for May 25, 2026. Categories: animals, nature.</description>
+  </item>
+</channel>
+</rss>

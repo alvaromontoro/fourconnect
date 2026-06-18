@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>4Connect - Colors</title>
+  <link>https://fourconnect.net/rss/colors.xml</link>
+  <description>Daily 4Connect puzzle updates for Colors.</description>
+  <language>en-us</language>
+  <lastBuildDate>Thu, 14 May 2026 00:00:00 +0000</lastBuildDate>
+  <item>
+    <title>Web Colors</title>
+    <link>https://fourconnect.net/games/2026/05/14</link>
+    <guid>https://fourconnect.net/games/2026/05/14</guid>
+    <pubDate>Thu, 14 May 2026 00:00:00 +0000</pubDate>
+    <description>4Connect puzzle for May 14, 2026. Categories: tech, webdev, colors.</description>
+  </item>
+</channel>
+</rss>
