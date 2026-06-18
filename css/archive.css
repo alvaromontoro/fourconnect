@@ -202,7 +202,6 @@
 .calendar-date.is-available:hover,
 .calendar-date.is-available:focus-visible {
   color: var(--accent);
-  outline: none;
 }
 
 .calendar-date.is-unavailable {
