@@ -3,5 +3,5 @@
   "date": "2026-06-26",
   "dateLong": "June 26, 2026",
   "categories": ["sports"],
-  "game": [{ "name": "Equipment used to hit a ball", "values": [ "Bat", "Club", "Racket", "Stick" ] },{ "name": "Places where sports are played", "values": [ "Court", "Field", "Pool", "Ring" ] },{ "name": "Words after 'Football'", "values": [ "Flag", "College", "Fantasy", "Sunday" ] },{ "name": "Shapes of sports playing areas", "values": [ "Bowl", "Diamond", "Oval", "Track" ] }]
+  "game": [{ "name": "Equipment used to hit a ball", "values": [ "Bat", "Club", "Racket", "Stick" ] },{ "name": "Places where sports are played", "values": [ "Court", "Field", "Pool", "Ring" ] },{ "name": "Words after &apos;Football&apos;", "values": [ "Flag", "College", "Fantasy", "Sunday" ] },{ "name": "Shapes of sports playing areas", "values": [ "Bowl", "Diamond", "Oval", "Track" ] }]
 }

@@ -3,5 +3,5 @@
   "date": "2026-06-25",
   "dateLong": "June 25, 2026",
   "categories": ["food"],
-  "game": [{ "name": "Types of Cake", "values": [ "Carrot", "Crumb", "Pound", "Sponge" ] },{ "name": "Words After 'Sour'", "values": [ "Cream", "Dough", "Mash", "Grapes" ] },{ "name": "Slang for Money", "values": [ "Dough", "Chip", "Lettuce", "Bread" ] },{ "name": "Golf Terms", "values": [ "Egg", "Cabbage", "Wedge", "Slice" ] }]
+  "game": [{ "name": "Types of Cake", "values": [ "Carrot", "Crumb", "Pound", "Sponge" ] },{ "name": "Words After &apos;Sour&apos;", "values": [ "Cream", "Dough", "Mash", "Grapes" ] },{ "name": "Slang for Money", "values": [ "Dough", "Chip", "Lettuce", "Bread" ] },{ "name": "Golf Terms", "values": [ "Egg", "Cabbage", "Wedge", "Slice" ] }]
 }
