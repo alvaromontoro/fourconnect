@@ -1,4 +1,15 @@
 .export {
+
+  &::after {
+    bottom: 10px;
+    color: var(--text);
+    content: "More games at fourconnect.net";
+    font-size: 0.875rem;
+    opacity: 0.5;
+    position: absolute;
+    right: 10px;
+  }
+
   .how-to-play,
   .more-games,
   footer,
