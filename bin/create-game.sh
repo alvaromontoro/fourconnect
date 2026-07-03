@@ -182,6 +182,20 @@ done
 # Refresh RSS feeds after category files change
 python3 "$PROJECT_ROOT/bin/update-index-from-latest-game.py" --rss-only
 
+# Export PNG image for the new game as the final step
+echo -e "\n${BLUE}Exporting game image...${NC}"
+if command -v npm >/dev/null 2>&1; then
+  if (cd "$PROJECT_ROOT" && npm run -s export:png -- --date "$GAME_DATE" --overwrite); then
+    echo -e "${GREEN}✓ Exported game PNG: $GAME_FOLDER/fourconnect-$GAME_DATE.png${NC}"
+  else
+    echo -e "${RED}⚠ Could not export game PNG automatically.${NC}"
+    echo -e "${BLUE}Run manually: cd $PROJECT_ROOT && npm run export:png -- --date $GAME_DATE --overwrite${NC}"
+  fi
+else
+  echo -e "${RED}⚠ npm is not available. Skipping PNG export.${NC}"
+  echo -e "${BLUE}Run manually when available: cd $PROJECT_ROOT && npm run export:png -- --date $GAME_DATE --overwrite${NC}"
+fi
+
 echo -e "\n${GREEN}=== Game successfully created! ===${NC}"
 echo -e "Location: ${BLUE}$GAME_FOLDER${NC}"
 echo -e "URL: ${BLUE}/games/$YEAR/$MONTH/$DAY/${NC}"
