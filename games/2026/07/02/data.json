@@ -1,0 +1,7 @@
+{
+  "title": "Colors (II)",
+  "date": "2026-07-02",
+  "dateLong": "July 02, 2026",
+  "categories": ["science", "colors"],
+  "game": [{ "name": "Reds", "values": [ "#800000", "Scarlet", "rgb(255, 99, 71)", "Salmon" ] },{ "name": "Blues", "values": [ "Sapphire", "hsl(240, 100, 25)", "#008080", "#039" ] },{ "name": "Greens", "values": [ "Mantis", "hsla(60, 100, 25)", "#21421E", "lch(77 104 132)" ] },{ "name": "Purples", "values": [ "rgb((112 41 99 / 1)", "Lavender", "oklch(29 50 312)", "#96c" ] }]
+}

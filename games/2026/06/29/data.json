@@ -1,0 +1,7 @@
+{
+  "title": "Fun",
+  "date": "2026-06-29",
+  "dateLong": "June 29, 2026",
+  "categories": ["fun"],
+  "game": [{ "name": "Words after inner", "values": [ "Circle", "Space", "Ear", "Child" ] },{ "name": "Types of bycicles", "values": [ "Mountain", "Road", "Hybrid", "City" ] },{ "name": "Synonyms of coffee", "values": [ "Brew", "Mud", "Joe", "Espresso" ] },{ "name": "Programming languages", "values": [ "C", "Java", "Pascal", "Python" ] }]
+}

@@ -1,0 +1,7 @@
+{
+  "title": "Geography",
+  "date": "2026-07-03",
+  "dateLong": "July 03, 2026",
+  "categories": ["geo", "world"],
+  "game": [{ "name": "World capitals with names of people", "values": [ "Sofia", "Santiago", "Asuncion", "Victoria" ] },{ "name": "Countries with names of people", "values": [ "Jordan", "Montserrat", "Chad", "Israel" ] },{ "name": "World capitals with names meaning capital", "values": [ "Beijing", "Astana", "Tokyo", "Seoul" ] },{ "name": "De facto world capitals", "values": [ "Cotonou", "Ramallah", "Bern", "Diego Garcia" ] }]
+}

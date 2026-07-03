@@ -1,0 +1,7 @@
+{
+  "title": "Numbers",
+  "date": "2026-06-30",
+  "dateLong": "June 30, 2026",
+  "categories": ["science", "math"],
+  "game": [{ "name": "Prime numbers", "values": [ "3", "67", "97", "9973" ] },{ "name": "Square numbers", "values": [ "4", "9", "144", "9409" ] },{ "name": "Cube numbers", "values": [ "8", "27", "64", "8000" ] },{ "name": "Automorphic (curious) numbers", "values": [ "1", "5", "76", "9376" ] }]
+}

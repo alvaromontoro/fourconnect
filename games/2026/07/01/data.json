@@ -1,0 +1,7 @@
+{
+  "title": "Colors",
+  "date": "2026-07-01",
+  "dateLong": "July 01, 2026",
+  "categories": ["colors"],
+  "game": [{ "name": "Reds", "values": [ "Maroon", "Scarlet", "Tomato", "Salmon" ] },{ "name": "Blues", "values": [ "Sapphire", "Navy", "Teal", "Smalt" ] },{ "name": "Greens", "values": [ "Mantis", "Olive", "Myrtle", "Malachite" ] },{ "name": "Purples", "values": [ "Byzantium", "Lavender", "Palatinate", "Amethyst" ] }]
+}

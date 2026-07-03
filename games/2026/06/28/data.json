@@ -1,0 +1,7 @@
+{
+  "title": "Cars",
+  "date": "2026-06-28",
+  "dateLong": "June 28, 2026",
+  "categories": ["cars", "fun"],
+  "game": [{ "name": "German car brands", "values": [ "Mercedes", "BMW", "Opel", "Smart" ] },{ "name": "Car brands named after their founders", "values": [ "Ferrari", "Porsche", "Toyota", "Honda" ] },{ "name": "Spanish car brands", "values": [ "SEAT", "CUPRA", "EBRO", "Santana" ] },{ "name": "Add a letter and get a word in Spanish", "values": [ "Mazda", "Audi", "RAM", "Lada" ] }]
+}

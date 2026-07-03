@@ -5,7 +5,21 @@
   <link>https://fourconnect.net/rss/fun.xml</link>
   <description>Daily 4Connect puzzle updates for Fun.</description>
   <language>en-us</language>
-  <lastBuildDate>Sat, 27 Jun 2026 00:00:00 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 29 Jun 2026 00:00:00 +0000</lastBuildDate>
+  <item>
+    <title>Fun</title>
+    <link>https://fourconnect.net/games/2026/06/29</link>
+    <guid>https://fourconnect.net/games/2026/06/29</guid>
+    <pubDate>Mon, 29 Jun 2026 00:00:00 +0000</pubDate>
+    <description>4Connect puzzle for June 29, 2026. Categories: fun.</description>
+  </item>
+  <item>
+    <title>Cars</title>
+    <link>https://fourconnect.net/games/2026/06/28</link>
+    <guid>https://fourconnect.net/games/2026/06/28</guid>
+    <pubDate>Sun, 28 Jun 2026 00:00:00 +0000</pubDate>
+    <description>4Connect puzzle for June 28, 2026. Categories: cars, fun.</description>
+  </item>
   <item>
     <title>Colors and More</title>
     <link>https://fourconnect.net/games/2026/06/27</link>
