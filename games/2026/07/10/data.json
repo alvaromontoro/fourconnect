@@ -3,5 +3,5 @@
   "date": "2026-07-10",
   "dateLong": "July 10, 2026",
   "categories": ["fun"],
-  "game": [{ "name": "At a conference", "values": [ "Speaker", "Stand", "Keynote", "Session" ] },{ "name": "Computer peripherals", "values": [ "Mouse", "Keyboard", "Monitor", "Microphone" ] },{ "name": "Instruments", "values": [ "Organ", "Piano", "Xylophone", "Spinet" ] },{ "name": "At the Operation Room", "values": [ "Scrubs", "Scalpel", "Mask", "Suture" ] }]
+  "game": [{ "name": "At a conference", "values": [ "Speaker", "Stand", "Keynote", "Session" ] },{ "name": "Computer peripherals", "values": [ "Mouse", "Keyboard", "Monitor", "Microphone" ] },{ "name": "Instruments", "values": [ "Organ", "Piano", "Xylophone", "Spinet" ] },{ "name": "At the operating room", "values": [ "Scrubs", "Scalpel", "Mask", "Suture" ] }]
 }
