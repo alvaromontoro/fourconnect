@@ -2,6 +2,9 @@
   "name": "fourconnect-site-tools",
   "private": true,
   "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "create:game": "bash bin/create-game.sh",
     "update:index": "python3 bin/update-index-from-latest-game.py",
