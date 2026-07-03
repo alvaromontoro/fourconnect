@@ -1,0 +1,7 @@
+{
+  "title": "Web Colors",
+  "date": "2026-07-06",
+  "dateLong": "July 06, 2026",
+  "categories": ["webdev", "tech"],
+  "game": [{ "name": "Red", "values": [ "crimson", "lightcoral", "salmon", "firebrick" ] },{ "name": "Blues", "values": [ "turquoise", "cyan", "navy", "cadetblue" ] },{ "name": "Yellows", "values": [ "moccasin", "gold", "lemonchiffon", "peachpuff" ] },{ "name": "Purples", "values": [ "plum", "orchid", "lavender", "thistle" ] }]
+}

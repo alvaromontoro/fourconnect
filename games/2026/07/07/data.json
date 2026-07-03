@@ -1,0 +1,7 @@
+{
+  "title": "Fantasy",
+  "date": "2026-07-07",
+  "dateLong": "July 07, 2026",
+  "categories": ["entertainment", "movies", "fun"],
+  "game": [{ "name": "Disney princesses", "values": [ "Ariel", "Tiana", "Raya", "Belle" ] },{ "name": "Cities in Canada", "values": [ "Aurora", "Regina", "Winnipeg", "Halifax" ] },{ "name": "Cities in Spain", "values": [ "Merida", "Ronda", "Jaen", "Vigo" ] },{ "name": "Disney princes (mostly)", "values": [ "Mordu", "Milo", "Naveen", "Li Shang" ] }]
+}

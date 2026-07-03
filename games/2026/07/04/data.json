@@ -1,0 +1,7 @@
+{
+  "title": "Basketball",
+  "date": "2026-07-04",
+  "dateLong": "July 04, 2026",
+  "categories": ["basketball", "sports"],
+  "game": [{ "name": "NBA teams", "values": [ "Wizards", "Magic", "Kings", "Nets" ] },{ "name": "Basketball statistics", "values": [ "Assist", "Steal", "Block", "Points" ] },{ "name": "Relationships", "values": [ "Partner", "Rebound", "Ghost", "Stashing" ] },{ "name": "WNBA teams", "values": [ "Mercury", "Dream", "Valkyries", "Storm" ] }]
+}
