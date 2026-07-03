@@ -1,0 +1,7 @@
+{
+  "title": "Food",
+  "date": "2026-07-08",
+  "dateLong": "July 08, 2026",
+  "categories": ["food"],
+  "game": [{ "name": "Herbs", "values": [ "Basil", "Sage", "Thyme", "Mint" ] },{ "name": "Fruits", "values": [ "Apple", "Orange", "Cherry", "Peach" ] },{ "name": "Common dishes", "values": [ "Burger", "Taco", "Sushi", "Pizza" ] },{ "name": "Liquids and sauces", "values": [ "Stock", "Broth", "Glaze", "Soup" ] }]
+}
