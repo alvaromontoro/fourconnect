@@ -5,7 +5,14 @@
   <link>https://fourconnect.net/rss/tech.xml</link>
   <description>Daily 4Connect puzzle updates for Tech.</description>
   <language>en-us</language>
-  <lastBuildDate>Mon, 06 Jul 2026 00:00:00 +0000</lastBuildDate>
+  <lastBuildDate>Thu, 09 Jul 2026 00:00:00 +0000</lastBuildDate>
+  <item>
+    <title>HTML</title>
+    <link>https://fourconnect.net/games/2026/07/09</link>
+    <guid>https://fourconnect.net/games/2026/07/09</guid>
+    <pubDate>Thu, 09 Jul 2026 00:00:00 +0000</pubDate>
+    <description>4Connect puzzle for July 9, 2026. Categories: webdev, tech.</description>
+  </item>
   <item>
     <title>Web Colors</title>
     <link>https://fourconnect.net/games/2026/07/06</link>
